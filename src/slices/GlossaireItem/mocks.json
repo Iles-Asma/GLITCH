@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"glossairetitle": {
+				"__TYPE__": "FieldContent",
+				"value": "necessary",
+				"type": "Text"
+			},
+			"glossaire_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem cillum voluptate minim reprehenderit ut officia fugiat ea. Cupidatat dolor ad commodo."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
