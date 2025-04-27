@@ -1,0 +1,18 @@
+{
+  "id": "nav",
+  "type": "SharedSlice",
+  "name": "Nav",
+  "description": "Nav",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

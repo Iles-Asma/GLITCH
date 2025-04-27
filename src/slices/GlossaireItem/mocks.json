@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"glossairetitle": {
+				"__TYPE__": "FieldContent",
+				"value": "plural",
+				"type": "Text"
+			},
+			"glossaire_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Cause"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
