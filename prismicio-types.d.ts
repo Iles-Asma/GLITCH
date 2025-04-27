@@ -252,7 +252,7 @@ export interface GlossaireItemSliceDefaultPrimary {
    * glossaireTitle field in *GlossaireItem → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: test
    * - **API ID Path**: glossaire_item.default.primary.glossairetitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -262,7 +262,7 @@ export interface GlossaireItemSliceDefaultPrimary {
    * glossaire description field in *GlossaireItem → Default → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: test
    * - **API ID Path**: glossaire_item.default.primary.glossaire_description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */

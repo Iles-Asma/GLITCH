@@ -5,16 +5,16 @@
 		"primary": {
 			"glossairetitle": {
 				"__TYPE__": "FieldContent",
-				"value": "plural",
+				"value": "necessary",
 				"type": "Text"
 			},
 			"glossaire_description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Cause"
+							"text": "Lorem cillum voluptate minim reprehenderit ut officia fugiat ea. Cupidatat dolor ad commodo."
 						}
 					}
 				]
