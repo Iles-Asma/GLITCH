@@ -1,0 +1,71 @@
+{
+  "type": "SharedSlice",
+  "id": "footer_simple_grid",
+  "name": "FooterSimpleGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Basic three-column footer grid with message, navigation/contact, and social links.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "main_message": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "heading3",
+            "label": "Main Message"
+          }
+        },
+        "links": {
+          "type": "Group",
+          "config": {
+            "label": "Navigation and Contact Links",
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label"
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "URL",
+                  "allowText": false,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "socials": {
+          "type": "Group",
+          "config": {
+            "label": "Social Icons",
+            "fields": {
+              "platform": {
+                "type": "Select",
+                "config": {
+                  "label": "Platform",
+                  "options": ["instagram", "facebook", "youtube"]
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "URL",
+                  "allowText": false,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

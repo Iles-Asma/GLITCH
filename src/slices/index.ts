@@ -2,4 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  footer_simple_grid: dynamic(() => import("./FooterSimpleGrid")),
+  hero: dynamic(() => import("./Hero")),
+};
