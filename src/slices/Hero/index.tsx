@@ -3,28 +3,33 @@ import { Content } from "@prismicio/client";
 import {
 	PrismicRichText,
 	SliceComponentProps,
-	PrismicLink,
 	PrismicImage,
 } from "@prismicio/react";
+import styles from "./Hero.module.css";
 
-/**
- * Props for `Hero`.
- */
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
-/**
- * Component for "Hero" Slices.
- */
 const Hero: FC<HeroProps> = ({ slice }) => {
 	return (
 		<section
+			className={styles.heroSection}
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			{slice.primary.title}
-			<PrismicRichText field={slice.primary.description} />
-			<PrismicLink field={slice.primary.button} />
-			<PrismicImage field={slice.primary.visual} />
+			<div className={styles.textContainer}>
+				<h2 className={styles.title}>{slice.primary.title}</h2>
+				<div className={styles.description}>
+					<PrismicRichText field={slice.primary.description} />
+				</div>
+				{/* Optionnel : ajouter un bouton si besoin */}
+				{/* <PrismicLink field={slice.primary.button}>Voir plus</PrismicLink> */}
+			</div>
+			<div className={styles.imageContainer}>
+				<PrismicImage
+					field={slice.primary.visual}
+					className={styles.image}
+				/>
+			</div>
 		</section>
 	);
 };

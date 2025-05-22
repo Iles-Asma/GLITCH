@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
-import { SliceZone } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -10,7 +10,14 @@ export default async function Page() {
 	const client = createClient();
 	const page = await client.getSingle("homepage").catch(() => notFound());
 
-	return <SliceZone slices={page.data.slices} components={components} />;
+	return (
+		<>
+			<div className="page-title">
+				<PrismicRichText field={page.data.title} />
+			</div>
+			<SliceZone slices={page.data.slices} components={components} />
+		</>
+	);
 }
 
 export async function generateMetadata(): Promise<Metadata> {
