@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 export const components = {
   footer_simple_grid: dynamic(() => import("./FooterSimpleGrid")),
   hero: dynamic(() => import("./Hero")),
+  hero_with_split_columns: dynamic(() => import("./HeroWithSplitColumns")),
   navigation_bar: dynamic(() => import("./NavigationBar")),
   split_title_description: dynamic(() => import("./SplitTitleDescription")),
 };

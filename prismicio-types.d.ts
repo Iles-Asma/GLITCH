@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | FooterSimpleGridSlice
+  | HeroWithSplitColumnsSlice
+  | NavigationBarSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -354,6 +358,78 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *HeroWithSplitColumns → Default → Primary → Columns*
+ */
+export interface HeroWithSplitColumnsSliceDefaultPrimaryColumnsItem {
+  /**
+   * Column Content field in *HeroWithSplitColumns → Default → Primary → Columns*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_split_columns.default.primary.columns[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *HeroWithSplitColumns → Default → Primary*
+ */
+export interface HeroWithSplitColumnsSliceDefaultPrimary {
+  /**
+   * Headline field in *HeroWithSplitColumns → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_split_columns.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Columns field in *HeroWithSplitColumns → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_split_columns.default.primary.columns[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  columns: prismic.GroupField<
+    Simplify<HeroWithSplitColumnsSliceDefaultPrimaryColumnsItem>
+  >;
+}
+
+/**
+ * Default variation for HeroWithSplitColumns Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Large headline and two columns for secondary content.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroWithSplitColumnsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroWithSplitColumnsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroWithSplitColumns*
+ */
+type HeroWithSplitColumnsSliceVariation = HeroWithSplitColumnsSliceDefault;
+
+/**
+ * HeroWithSplitColumns Shared Slice
+ *
+ * - **API ID**: `hero_with_split_columns`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroWithSplitColumnsSlice = prismic.SharedSlice<
+  "hero_with_split_columns",
+  HeroWithSplitColumnsSliceVariation
+>;
+
+/**
  * Item in *NavigationBar → Default → Primary → Left Links*
  */
 export interface NavigationBarSliceDefaultPrimaryLeftLinksItem {
@@ -545,6 +621,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroWithSplitColumnsSlice,
+      HeroWithSplitColumnsSliceDefaultPrimaryColumnsItem,
+      HeroWithSplitColumnsSliceDefaultPrimary,
+      HeroWithSplitColumnsSliceVariation,
+      HeroWithSplitColumnsSliceDefault,
       NavigationBarSlice,
       NavigationBarSliceDefaultPrimaryLeftLinksItem,
       NavigationBarSliceDefaultPrimaryRightLinksItem,

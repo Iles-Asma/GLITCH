@@ -20,6 +20,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "footer_simple_grid": {
+              "type": "SharedSlice"
+            },
+            "hero_with_split_columns": {
+              "type": "SharedSlice"
+            },
+            "navigation_bar": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

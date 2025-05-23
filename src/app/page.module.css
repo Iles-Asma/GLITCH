@@ -38,6 +38,7 @@
 .pageTitle {
 	display: flex;
 	justify-content: center;
+	border: solid 1pc red;
 }
 
 .main ol {
