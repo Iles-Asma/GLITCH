@@ -353,6 +353,160 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Item in *NavigationBar → Default → Primary → Left Links*
+ */
+export interface NavigationBarSliceDefaultPrimaryLeftLinksItem {
+  /**
+   * Link field in *NavigationBar → Default → Primary → Left Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_bar.default.primary.left_links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Item in *NavigationBar → Default → Primary → Right Links*
+ */
+export interface NavigationBarSliceDefaultPrimaryRightLinksItem {
+  /**
+   * Link field in *NavigationBar → Default → Primary → Right Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_bar.default.primary.right_links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *NavigationBar → Default → Primary*
+ */
+export interface NavigationBarSliceDefaultPrimary {
+  /**
+   * Left Links field in *NavigationBar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_bar.default.primary.left_links[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  left_links: prismic.GroupField<
+    Simplify<NavigationBarSliceDefaultPrimaryLeftLinksItem>
+  >;
+
+  /**
+   * Center Title field in *NavigationBar → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_bar.default.primary.center_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  center_title: prismic.TitleField;
+
+  /**
+   * Right Links field in *NavigationBar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_bar.default.primary.right_links[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  right_links: prismic.GroupField<
+    Simplify<NavigationBarSliceDefaultPrimaryRightLinksItem>
+  >;
+}
+
+/**
+ * Default variation for NavigationBar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard horizontal navigation bar with a central main link and multiple links to the left and right.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationBarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationBarSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NavigationBar*
+ */
+type NavigationBarSliceVariation = NavigationBarSliceDefault;
+
+/**
+ * NavigationBar Shared Slice
+ *
+ * - **API ID**: `navigation_bar`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationBarSlice = prismic.SharedSlice<
+  "navigation_bar",
+  NavigationBarSliceVariation
+>;
+
+/**
+ * Primary content in *SplitTitleDescription → Default → Primary*
+ */
+export interface SplitTitleDescriptionSliceDefaultPrimary {
+  /**
+   * GlossaireItemTitle field in *SplitTitleDescription → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: split_title_description.default.primary.GlossaireItemTitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  GlossaireItemTitle: prismic.TitleField;
+
+  /**
+   * GlossaireItemDescription field in *SplitTitleDescription → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: split_title_description.default.primary.GlossaireItemDescription
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  GlossaireItemDescription: prismic.RichTextField;
+}
+
+/**
+ * Default variation for SplitTitleDescription Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard split layout with a large title and a body of descriptive text.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SplitTitleDescriptionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SplitTitleDescriptionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SplitTitleDescription*
+ */
+type SplitTitleDescriptionSliceVariation = SplitTitleDescriptionSliceDefault;
+
+/**
+ * SplitTitleDescription Shared Slice
+ *
+ * - **API ID**: `split_title_description`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SplitTitleDescriptionSlice = prismic.SharedSlice<
+  "split_title_description",
+  SplitTitleDescriptionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -391,6 +545,16 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      NavigationBarSlice,
+      NavigationBarSliceDefaultPrimaryLeftLinksItem,
+      NavigationBarSliceDefaultPrimaryRightLinksItem,
+      NavigationBarSliceDefaultPrimary,
+      NavigationBarSliceVariation,
+      NavigationBarSliceDefault,
+      SplitTitleDescriptionSlice,
+      SplitTitleDescriptionSliceDefaultPrimary,
+      SplitTitleDescriptionSliceVariation,
+      SplitTitleDescriptionSliceDefault,
     };
   }
 }

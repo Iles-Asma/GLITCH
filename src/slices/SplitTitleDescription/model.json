@@ -1,0 +1,36 @@
+{
+  "type": "SharedSlice",
+  "id": "split_title_description",
+  "name": "SplitTitleDescription",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard split layout with a large title and a body of descriptive text.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "GlossaireItemTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "GlossaireItemTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "GlossaireItemDescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "GlossaireItemDescription",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

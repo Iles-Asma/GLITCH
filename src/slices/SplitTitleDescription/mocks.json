@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"GlossaireItemTitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Science"
+						}
+					}
+				]
+			},
+			"GlossaireItemDescription": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat velit excepteur labore laboris voluptate magna adipisicing."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

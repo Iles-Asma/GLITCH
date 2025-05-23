@@ -1,0 +1,58 @@
+{
+  "type": "SharedSlice",
+  "id": "navigation_bar",
+  "name": "NavigationBar",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard horizontal navigation bar with a central main link and multiple links to the left and right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "left_links": {
+          "type": "Group",
+          "config": {
+            "label": "Left Links",
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "allowText": true,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "center_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Center Title"
+          }
+        },
+        "right_links": {
+          "type": "Group",
+          "config": {
+            "label": "Right Links",
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "allowText": true,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
