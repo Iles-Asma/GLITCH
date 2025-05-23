@@ -1,7 +1,7 @@
 {
   "type": "SharedSlice",
   "id": "footer_simple_grid",
-  "name": "FooterSimpleGrid",
+  "name": "Footer",
   "variations": [
     {
       "id": "default",
@@ -65,7 +65,8 @@
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

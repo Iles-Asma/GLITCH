@@ -167,11 +167,11 @@ export type SitetitleDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SitetitleDocument;
 
 /**
- * Item in *FooterSimpleGrid → Default → Primary → Navigation and Contact Links*
+ * Item in *Footer → Default → Primary → Navigation and Contact Links*
  */
 export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
   /**
-   * Label field in *FooterSimpleGrid → Default → Primary → Navigation and Contact Links*
+   * Label field in *Footer → Default → Primary → Navigation and Contact Links*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -181,7 +181,7 @@ export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
   label: prismic.KeyTextField;
 
   /**
-   * URL field in *FooterSimpleGrid → Default → Primary → Navigation and Contact Links*
+   * URL field in *Footer → Default → Primary → Navigation and Contact Links*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -192,11 +192,11 @@ export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
 }
 
 /**
- * Item in *FooterSimpleGrid → Default → Primary → Social Icons*
+ * Item in *Footer → Default → Primary → Social Icons*
  */
 export interface FooterSimpleGridSliceDefaultPrimarySocialsItem {
   /**
-   * Platform field in *FooterSimpleGrid → Default → Primary → Social Icons*
+   * Platform field in *Footer → Default → Primary → Social Icons*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -206,7 +206,7 @@ export interface FooterSimpleGridSliceDefaultPrimarySocialsItem {
   platform: prismic.SelectField<"instagram" | "facebook" | "youtube">;
 
   /**
-   * URL field in *FooterSimpleGrid → Default → Primary → Social Icons*
+   * URL field in *Footer → Default → Primary → Social Icons*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -217,11 +217,11 @@ export interface FooterSimpleGridSliceDefaultPrimarySocialsItem {
 }
 
 /**
- * Primary content in *FooterSimpleGrid → Default → Primary*
+ * Primary content in *Footer → Default → Primary*
  */
 export interface FooterSimpleGridSliceDefaultPrimary {
   /**
-   * Main Message field in *FooterSimpleGrid → Default → Primary*
+   * Main Message field in *Footer → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -231,7 +231,7 @@ export interface FooterSimpleGridSliceDefaultPrimary {
   main_message: prismic.RichTextField;
 
   /**
-   * Navigation and Contact Links field in *FooterSimpleGrid → Default → Primary*
+   * Navigation and Contact Links field in *Footer → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -243,7 +243,7 @@ export interface FooterSimpleGridSliceDefaultPrimary {
   >;
 
   /**
-   * Social Icons field in *FooterSimpleGrid → Default → Primary*
+   * Social Icons field in *Footer → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -256,7 +256,7 @@ export interface FooterSimpleGridSliceDefaultPrimary {
 }
 
 /**
- * Default variation for FooterSimpleGrid Slice
+ * Default variation for Footer Slice
  *
  * - **API ID**: `default`
  * - **Description**: Basic three-column footer grid with message, navigation/contact, and social links.
@@ -269,12 +269,12 @@ export type FooterSimpleGridSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *FooterSimpleGrid*
+ * Slice variation for *Footer*
  */
 type FooterSimpleGridSliceVariation = FooterSimpleGridSliceDefault;
 
 /**
- * FooterSimpleGrid Shared Slice
+ * Footer Shared Slice
  *
  * - **API ID**: `footer_simple_grid`
  * - **Description**: *None*
@@ -358,11 +358,11 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Item in *HeroWithSplitColumns → Default → Primary → Columns*
+ * Item in *HeroWithColumns → Default → Primary → Columns*
  */
 export interface HeroWithSplitColumnsSliceDefaultPrimaryColumnsItem {
   /**
-   * Column Content field in *HeroWithSplitColumns → Default → Primary → Columns*
+   * Column Content field in *HeroWithColumns → Default → Primary → Columns*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -373,11 +373,11 @@ export interface HeroWithSplitColumnsSliceDefaultPrimaryColumnsItem {
 }
 
 /**
- * Primary content in *HeroWithSplitColumns → Default → Primary*
+ * Primary content in *HeroWithColumns → Default → Primary*
  */
 export interface HeroWithSplitColumnsSliceDefaultPrimary {
   /**
-   * Headline field in *HeroWithSplitColumns → Default → Primary*
+   * Headline field in *HeroWithColumns → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -387,7 +387,7 @@ export interface HeroWithSplitColumnsSliceDefaultPrimary {
   headline: prismic.RichTextField;
 
   /**
-   * Columns field in *HeroWithSplitColumns → Default → Primary*
+   * Columns field in *HeroWithColumns → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -400,7 +400,7 @@ export interface HeroWithSplitColumnsSliceDefaultPrimary {
 }
 
 /**
- * Default variation for HeroWithSplitColumns Slice
+ * Default variation for HeroWithColumns Slice
  *
  * - **API ID**: `default`
  * - **Description**: Large headline and two columns for secondary content.
@@ -413,12 +413,12 @@ export type HeroWithSplitColumnsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *HeroWithSplitColumns*
+ * Slice variation for *HeroWithColumns*
  */
 type HeroWithSplitColumnsSliceVariation = HeroWithSplitColumnsSliceDefault;
 
 /**
- * HeroWithSplitColumns Shared Slice
+ * HeroWithColumns Shared Slice
  *
  * - **API ID**: `hero_with_split_columns`
  * - **Description**: *None*
@@ -529,11 +529,11 @@ export type NavigationBarSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *SplitTitleDescription → Default → Primary*
+ * Primary content in *GlossaireItem → Default → Primary*
  */
 export interface SplitTitleDescriptionSliceDefaultPrimary {
   /**
-   * GlossaireItemTitle field in *SplitTitleDescription → Default → Primary*
+   * GlossaireItemTitle field in *GlossaireItem → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -543,7 +543,7 @@ export interface SplitTitleDescriptionSliceDefaultPrimary {
   GlossaireItemTitle: prismic.TitleField;
 
   /**
-   * GlossaireItemDescription field in *SplitTitleDescription → Default → Primary*
+   * GlossaireItemDescription field in *GlossaireItem → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -554,7 +554,7 @@ export interface SplitTitleDescriptionSliceDefaultPrimary {
 }
 
 /**
- * Default variation for SplitTitleDescription Slice
+ * Default variation for GlossaireItem Slice
  *
  * - **API ID**: `default`
  * - **Description**: Standard split layout with a large title and a body of descriptive text.
@@ -567,12 +567,12 @@ export type SplitTitleDescriptionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *SplitTitleDescription*
+ * Slice variation for *GlossaireItem*
  */
 type SplitTitleDescriptionSliceVariation = SplitTitleDescriptionSliceDefault;
 
 /**
- * SplitTitleDescription Shared Slice
+ * GlossaireItem Shared Slice
  *
  * - **API ID**: `split_title_description`
  * - **Description**: *None*

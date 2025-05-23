@@ -1,6 +1,10 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import {
+	SliceComponentProps,
+	PrismicRichText,
+	PrismicLink,
+} from "@prismicio/react";
 
 /**
  * Props for `FooterSimpleGrid`.
@@ -16,7 +20,16 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-		></section>
+		>
+			<PrismicRichText field={slice.primary.main_message} />
+			{slice.primary.links.map((item, index) => (
+				<>
+					<PrismicLink field={item.url} key={index}>
+						{item.label}
+					</PrismicLink>
+				</>
+			))}
+		</section>
 	);
 };
 

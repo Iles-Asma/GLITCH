@@ -2,7 +2,7 @@ import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
 import { PrismicRichText, SliceZone } from "@prismicio/react";
-import "./globals.css";
+import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
@@ -12,7 +12,7 @@ export default async function Page() {
 
 	return (
 		<>
-			<div className="page-title">
+			<div className={styles.pageTitle}>
 				<PrismicRichText field={page.data.title} />
 			</div>
 			<SliceZone slices={page.data.slices} components={components} />

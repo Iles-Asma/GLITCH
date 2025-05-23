@@ -1,7 +1,7 @@
 {
   "type": "SharedSlice",
   "id": "hero_with_split_columns",
-  "name": "HeroWithSplitColumns",
+  "name": "HeroWithColumns",
   "variations": [
     {
       "id": "default",
@@ -33,7 +33,8 @@
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

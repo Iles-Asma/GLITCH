@@ -36,9 +36,10 @@
 
 /* page.module.css */
 .pageTitle {
+	border: solid 1px red;
 	display: flex;
 	justify-content: center;
-	border: solid 1pc red;
+	margin: 20px;
 }
 
 .main ol {

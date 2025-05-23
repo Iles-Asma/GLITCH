@@ -1,7 +1,7 @@
 {
   "type": "SharedSlice",
   "id": "split_title_description",
-  "name": "SplitTitleDescription",
+  "name": "GlossaireItem",
   "variations": [
     {
       "id": "default",
