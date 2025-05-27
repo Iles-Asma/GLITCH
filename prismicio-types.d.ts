@@ -167,6 +167,64 @@ export type SitetitleDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SitetitleDocument;
 
 /**
+ * Primary content in *Button → button → Primary*
+ */
+export interface CtaSliceSimplePrimary {
+  /**
+   * Button Text field in *Button → button → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.simple.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Button → button → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.simple.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * button variation for Button Slice
+ *
+ * - **API ID**: `simple`
+ * - **Description**: A single call-to-action button with customizable text and link.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaSliceSimple = prismic.SharedSliceVariation<
+  "simple",
+  Simplify<CtaSliceSimplePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Button*
+ */
+type CtaSliceVariation = CtaSliceSimple;
+
+/**
+ * Button Shared Slice
+ *
+ * - **API ID**: `cta`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
+
+/**
  * Item in *Footer → Default → Primary → Navigation and Contact Links*
  */
 export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
@@ -583,6 +641,73 @@ export type SplitTitleDescriptionSlice = prismic.SharedSlice<
   SplitTitleDescriptionSliceVariation
 >;
 
+/**
+ * Primary content in *Card → card → Primary*
+ */
+export interface TwoColumnPoemLayoutSlicePoemWithMetadataAndTitlePrimary {
+  /**
+   * articleImage field in *Card → card → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_column_poem_layout.poem_with_metadata_and_title.primary.articleimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  articleimage: prismic.ImageField<never>;
+
+  /**
+   * ArticleTitle field in *Card → card → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_column_poem_layout.poem_with_metadata_and_title.primary.right_column_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  right_column_content: prismic.RichTextField;
+
+  /**
+   * articleNumber field in *Card → card → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_column_poem_layout.poem_with_metadata_and_title.primary.articlenumber
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articlenumber: prismic.RichTextField;
+}
+
+/**
+ * card variation for Card Slice
+ *
+ * - **API ID**: `poem_with_metadata_and_title`
+ * - **Description**: This variation includes a left column for poem/prose title and metadata, and a right column for the main poetic content, suitable for literary publications.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoColumnPoemLayoutSlicePoemWithMetadataAndTitle =
+  prismic.SharedSliceVariation<
+    "poem_with_metadata_and_title",
+    Simplify<TwoColumnPoemLayoutSlicePoemWithMetadataAndTitlePrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *Card*
+ */
+type TwoColumnPoemLayoutSliceVariation =
+  TwoColumnPoemLayoutSlicePoemWithMetadataAndTitle;
+
+/**
+ * Card Shared Slice
+ *
+ * - **API ID**: `two_column_poem_layout`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoColumnPoemLayoutSlice = prismic.SharedSlice<
+  "two_column_poem_layout",
+  TwoColumnPoemLayoutSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -611,6 +736,10 @@ declare module "@prismicio/client" {
       SitetitleDocumentData,
       SitetitleDocumentDataNavigationItem,
       AllDocumentTypes,
+      CtaSlice,
+      CtaSliceSimplePrimary,
+      CtaSliceVariation,
+      CtaSliceSimple,
       FooterSimpleGridSlice,
       FooterSimpleGridSliceDefaultPrimaryLinksItem,
       FooterSimpleGridSliceDefaultPrimarySocialsItem,
@@ -636,6 +765,10 @@ declare module "@prismicio/client" {
       SplitTitleDescriptionSliceDefaultPrimary,
       SplitTitleDescriptionSliceVariation,
       SplitTitleDescriptionSliceDefault,
+      TwoColumnPoemLayoutSlice,
+      TwoColumnPoemLayoutSlicePoemWithMetadataAndTitlePrimary,
+      TwoColumnPoemLayoutSliceVariation,
+      TwoColumnPoemLayoutSlicePoemWithMetadataAndTitle,
     };
   }
 }

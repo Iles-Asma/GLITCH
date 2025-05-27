@@ -1,0 +1,22 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "simple",
+		"primary": {
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "seed",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "12c975b3-554a-4077-8ab8-285d877d849c",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": []
+	}
+]

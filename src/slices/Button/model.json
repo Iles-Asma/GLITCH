@@ -1,0 +1,33 @@
+{
+  "type": "SharedSlice",
+  "id": "cta",
+  "name": "Button",
+  "variations": [
+    {
+      "id": "simple",
+      "name": "button",
+      "description": "A single call-to-action button with customizable text and link.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "allowText": false,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

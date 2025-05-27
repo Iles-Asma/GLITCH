@@ -3,9 +3,11 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  cta: dynamic(() => import("./Button")),
   footer_simple_grid: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
   hero_with_split_columns: dynamic(() => import("./HeroWithColumns")),
   navigation_bar: dynamic(() => import("./NavigationBar")),
   split_title_description: dynamic(() => import("./GlossaireItem")),
+  two_column_poem_layout: dynamic(() => import("./Card")),
 };

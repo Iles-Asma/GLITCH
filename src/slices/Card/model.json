@@ -1,0 +1,44 @@
+{
+  "type": "SharedSlice",
+  "id": "two_column_poem_layout",
+  "name": "Card",
+  "variations": [
+    {
+      "id": "poem_with_metadata_and_title",
+      "name": "card",
+      "description": "This variation includes a left column for poem/prose title and metadata, and a right column for the main poetic content, suitable for literary publications.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "articleimage": {
+          "type": "Image",
+          "config": {
+            "label": "articleImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "right_column_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "ArticleTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong"
+          }
+        },
+        "articlenumber": {
+          "type": "StructuredText",
+          "config": {
+            "label": "articleNumber",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
