@@ -47,6 +47,14 @@
 						}
 					}
 				]
+			},
+			"articledetail": {
+				"__TYPE__": "LinkContent",
+				"key": "9a20554e-fa11-4b3d-bd9e-bb82df564fd3",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": []

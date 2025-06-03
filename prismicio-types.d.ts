@@ -4,7 +4,187 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type ArticleDocumentDataSlicesSlice = never;
+
+/**
+ * Content for article documents
+ */
+interface ArticleDocumentData {
+  /**
+   * articleImage field in *article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articleimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  articleimage: prismic.ImageField<never>;
+
+  /**
+   * ArticleTitle field in *article*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articletitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articletitle: prismic.RichTextField;
+
+  /**
+   * articleDescription field in *article*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articledescription
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articledescription: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
+   * Meta Title field in *article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: article.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: article.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticleDocumentData>,
+    "article",
+    Lang
+  >;
+
+type GlossaireDocumentDataSlicesSlice = SplitTitleDescriptionSlice;
+
+/**
+ * Content for glossaire documents
+ */
+interface GlossaireDocumentData {
+  /**
+   * Slice Zone field in *glossaire*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: glossaire.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<GlossaireDocumentDataSlicesSlice> /**
+   * Meta Title field in *glossaire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: glossaire.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *glossaire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: glossaire.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *glossaire*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: glossaire.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * glossaire document from Prismic
+ *
+ * - **API ID**: `glossaire`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GlossaireDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<GlossaireDocumentData>,
+    "glossaire",
+    Lang
+  >;
+
+/**
+ * Item in *Homepage → articleItem*
+ */
+export interface HomepageDocumentDataArticleitemItem {
+  /**
+   * articles field in *Homepage → articleItem*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.articleitem[].articles
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  articles: prismic.ContentRelationshipField<"article">;
+}
+
 type HomepageDocumentDataSlicesSlice =
+  | ArticleReferenceSlice
+  | TwoColumnPoemLayoutSlice
   | FooterSimpleGridSlice
   | HeroWithSplitColumnsSlice
   | NavigationBarSlice
@@ -24,6 +204,30 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * articleDetail field in *Homepage*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.articledetail
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  articledetail: prismic.ContentRelationshipField<"article">;
+
+  /**
+   * articleItem field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.articleitem[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  articleitem: prismic.GroupField<
+    Simplify<HomepageDocumentDataArticleitemItem>
+  >;
 
   /**
    * Slice Zone field in *Homepage*
@@ -164,7 +368,73 @@ export type SitetitleDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SitetitleDocument;
+export type AllDocumentTypes =
+  | ArticleDocument
+  | GlossaireDocument
+  | HomepageDocument
+  | SitetitleDocument;
+
+/**
+ * Item in *ArticleReference → Default → Primary → article*
+ */
+export interface ArticleReferenceSliceDefaultPrimaryArticleItem {
+  /**
+   * articlePage field in *ArticleReference → Default → Primary → article*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_reference.default.primary.article[].articlepage
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  articlepage: prismic.ContentRelationshipField<"article">;
+}
+
+/**
+ * Primary content in *ArticleReference → Default → Primary*
+ */
+export interface ArticleReferenceSliceDefaultPrimary {
+  /**
+   * article field in *ArticleReference → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_reference.default.primary.article[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  article: prismic.GroupField<
+    Simplify<ArticleReferenceSliceDefaultPrimaryArticleItem>
+  >;
+}
+
+/**
+ * Default variation for ArticleReference Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleReferenceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleReferenceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticleReference*
+ */
+type ArticleReferenceSliceVariation = ArticleReferenceSliceDefault;
+
+/**
+ * ArticleReference Shared Slice
+ *
+ * - **API ID**: `article_reference`
+ * - **Description**: ArticleReference
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleReferenceSlice = prismic.SharedSlice<
+  "article_reference",
+  ArticleReferenceSliceVariation
+>;
 
 /**
  * Primary content in *Button → button → Primary*
@@ -386,6 +656,22 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   visual: prismic.ImageField<never>;
+
+  /**
+   * article field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.article
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  article: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -674,6 +960,16 @@ export interface TwoColumnPoemLayoutSlicePoemWithMetadataAndTitlePrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   articlenumber: prismic.RichTextField;
+
+  /**
+   * articleDetail field in *Card → card → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_column_poem_layout.poem_with_metadata_and_title.primary.articledetail
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  articledetail: prismic.ContentRelationshipField<"article">;
 }
 
 /**
@@ -729,13 +1025,25 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ArticleDocument,
+      ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
+      GlossaireDocument,
+      GlossaireDocumentData,
+      GlossaireDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
+      HomepageDocumentDataArticleitemItem,
       HomepageDocumentDataSlicesSlice,
       SitetitleDocument,
       SitetitleDocumentData,
       SitetitleDocumentDataNavigationItem,
       AllDocumentTypes,
+      ArticleReferenceSlice,
+      ArticleReferenceSliceDefaultPrimaryArticleItem,
+      ArticleReferenceSliceDefaultPrimary,
+      ArticleReferenceSliceVariation,
+      ArticleReferenceSliceDefault,
       CtaSlice,
       CtaSliceSimplePrimary,
       CtaSliceVariation,

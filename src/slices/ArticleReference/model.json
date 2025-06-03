@@ -1,0 +1,39 @@
+{
+  "id": "article_reference",
+  "type": "SharedSlice",
+  "name": "ArticleReference",
+  "description": "ArticleReference",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "article": {
+          "type": "Group",
+          "config": {
+            "label": "article",
+            "repeat": true,
+            "fields": {
+              "articlepage": {
+                "type": "Link",
+                "config": {
+                  "label": "articlePage",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "article"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

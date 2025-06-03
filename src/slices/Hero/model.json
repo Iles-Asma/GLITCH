@@ -46,6 +46,17 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "article": {
+          "type": "Link",
+          "config": {
+            "label": "",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
         }
       },
       "items": {}

@@ -22,11 +22,44 @@
           "placeholder": ""
         }
       },
+      "articledetail": {
+        "type": "Link",
+        "config": {
+          "label": "articleDetail",
+          "select": "document",
+          "repeat": false,
+          "customtypes": ["article"]
+        }
+      },
+      "articleitem": {
+        "type": "Group",
+        "config": {
+          "label": "articleItem",
+          "repeat": true,
+          "fields": {
+            "articles": {
+              "type": "Link",
+              "config": {
+                "label": "articles",
+                "select": "document",
+                "repeat": false,
+                "customtypes": ["article"]
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "article_reference": {
+              "type": "SharedSlice"
+            },
+            "two_column_poem_layout": {
+              "type": "SharedSlice"
+            },
             "footer_simple_grid": {
               "type": "SharedSlice"
             },

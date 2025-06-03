@@ -50,6 +50,15 @@
 				"credits": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"article": {
+				"key": "9c579941-fe72-421f-8187-bbfda4017d55",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "held"
+				}
 			}
 		},
 		"items": []

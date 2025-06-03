@@ -1,26 +1,31 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import {
+	SliceComponentProps,
+	PrismicImage,
+	PrismicRichText,
+} from "@prismicio/react";
 
 /**
  * Props for `TwoColumnPoemLayout`.
  */
 export type TwoColumnPoemLayoutProps =
-  SliceComponentProps<Content.TwoColumnPoemLayoutSlice>;
+	SliceComponentProps<Content.TwoColumnPoemLayoutSlice>;
 
 /**
  * Component for "TwoColumnPoemLayout" Slices.
  */
 const TwoColumnPoemLayout: FC<TwoColumnPoemLayoutProps> = ({ slice }) => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for two_column_poem_layout (variation:{" "}
-      {slice.variation}) Slices
-    </section>
-  );
+	return (
+		<section
+			data-slice-type={slice.slice_type}
+			data-slice-variation={slice.variation}
+		>
+			<PrismicImage field={slice.primary.articleimage} />
+			<PrismicRichText field={slice.primary.right_column_content} />
+			<PrismicRichText field={slice.primary.articlenumber} />
+		</section>
+	);
 };
 
 export default TwoColumnPoemLayout;

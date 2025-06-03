@@ -8,7 +8,20 @@ import { components } from "@/slices";
 
 export default async function Page() {
 	const client = createClient();
-	const page = await client.getSingle("homepage").catch(() => notFound());
+	const page = await client
+		.getSingle("homepage", {
+			fetchLinks: ["ArticleTitle", "articleDescription"],
+		})
+		.catch(() => notFound());
+
+	// console.log(page.data.articleitem[0]?.articles.id);
+
+	const id = page.data.articleitem[0]?.articles.id;
+
+	const test = await client.getByID(id);
+	// const test = await client.getByUIDs("article", ["article-test"]);
+
+	console.log("Page data:", test);
 
 	return (
 		<>

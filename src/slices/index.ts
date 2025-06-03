@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  article_reference: dynamic(() => import("./ArticleReference")),
   cta: dynamic(() => import("./Button")),
   footer_simple_grid: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),

@@ -36,6 +36,17 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
+        },
+        "articledetail": {
+          "type": "Link",
+          "config": {
+            "label": "articleDetail",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "article"
+            ]
+          }
         }
       },
       "items": {}
