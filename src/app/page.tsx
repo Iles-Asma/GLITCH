@@ -16,12 +16,15 @@ export default async function Page() {
 
 	// console.log(page.data.articleitem[0]?.articles.id);
 
-	const id = page.data.articleitem[0]?.articles.id;
+	const ids = page.data.articleitem.map((item: any) => item.articles.id);
+	const tests = await Promise.all(
+		ids.map((id: string) => client.getByID(id))
+	);
 
-	const test = await client.getByID(id);
+	// const test = await client.getByID(id);
 	// const test = await client.getByUIDs("article", ["article-test"]);
 
-	console.log("Page data:", test);
+	console.log("Page data:", tests);
 
 	return (
 		<>
