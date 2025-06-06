@@ -5,31 +5,30 @@ import {
 	PrismicRichText,
 	PrismicLink,
 } from "@prismicio/react";
+import styles from "./footer.module.css"; // Import CSS module
 
-/**
- * Props for `FooterSimpleGrid`.
- */
 export type FooterSimpleGridProps =
 	SliceComponentProps<Content.FooterSimpleGridSlice>;
 
-/**
- * Component for "FooterSimpleGrid" Slices.
- */
 const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 	return (
-		<section
-			data-slice-type={slice.slice_type}
-			data-slice-variation={slice.variation}
-		>
-			<PrismicRichText field={slice.primary.main_message} />
-			{slice.primary.links.map((item, index) => (
-				<>
+		<footer className={styles.footer}>
+			<div className={styles["footer-left"]}>
+				<PrismicRichText field={slice.primary.main_message} />
+			</div>
+			<div className={styles["footer-center"]}>
+				{slice.primary.links.map((item, index) => (
 					<PrismicLink field={item.url} key={index}>
 						{item.label}
 					</PrismicLink>
-				</>
-			))}
-		</section>
+				))}
+			</div>
+			<div className={styles["footer-right"]}>
+				<img src="/icons/instagram.svg" alt="Instagram" />
+				<img src="/icons/facebook.svg" alt="Facebook" />
+				<img src="/icons/youtube.svg" alt="YouTube" />
+			</div>
+		</footer>
 	);
 };
 
