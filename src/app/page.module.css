@@ -36,7 +36,6 @@
 
 /* page.module.css */
 .pageTitle {
-	border: solid 1px red;
 	display: flex;
 	justify-content: center;
 	margin: 20px;

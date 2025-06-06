@@ -4,6 +4,7 @@ import {
 	PrismicRichText,
 	SliceComponentProps,
 	PrismicImage,
+	PrismicLink,
 } from "@prismicio/react";
 import styles from "./Hero.module.css";
 
@@ -21,9 +22,17 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 				<div className={styles.description}>
 					<PrismicRichText field={slice.primary.description} />
 				</div>
-				{/* Optionnel : ajouter un bouton si besoin */}
-				{/* <PrismicLink field={slice.primary.button}>Voir plus</PrismicLink> */}
+
+				{slice.primary.button && (
+					<PrismicLink
+						field={slice.primary.button}
+						className={styles.button}
+					>
+						Voir plus
+					</PrismicLink>
+				)}
 			</div>
+
 			<div className={styles.imageContainer}>
 				<PrismicImage
 					field={slice.primary.visual}

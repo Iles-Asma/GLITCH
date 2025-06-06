@@ -5,6 +5,7 @@ import {
 	PrismicRichText,
 	PrismicLink,
 } from "@prismicio/react";
+import styles from "./page.module.css";
 
 /**
  * Props for `NavigationBar`.
@@ -21,19 +22,27 @@ const NavigationBar: FC<NavigationBarProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			{slice.primary.left_links.map((item, index) => (
-				<>
-					<PrismicLink field={item.link} key={index} />
-				</>
-				// Render the item
-			))}
-			<PrismicRichText field={slice.primary.center_title} />
-			{slice.primary.right_links.map((item, index) => (
-				<>
-					<PrismicLink field={item.link} key={index} />
-				</>
-				// Render the item
-			))}
+			<nav className={styles.nav}>
+				<div className={styles.left}>
+					{slice.primary.left_links.map((item, index) => (
+						<PrismicLink field={item.link} key={index}>
+							{item.link.text}
+						</PrismicLink>
+					))}
+				</div>
+
+				<div className={styles.center}>
+					<PrismicRichText field={slice.primary.center_title} />
+				</div>
+
+				<div className={styles.right}>
+					{slice.primary.right_links.map((item, index) => (
+						<PrismicLink field={item.link} key={index}>
+							{item.link.text}
+						</PrismicLink>
+					))}
+				</div>
+			</nav>
 		</section>
 	);
 };

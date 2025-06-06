@@ -1,0 +1,22 @@
+/* page.module.css */
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: white;
+	border: 1px solid #ccc;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.left,
+.right {
+	display: flex;
+	gap: 2rem;
+}
+
+.center {
+	text-align: center;
+}
