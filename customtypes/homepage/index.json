@@ -63,9 +63,6 @@
             "footer_simple_grid": {
               "type": "SharedSlice"
             },
-            "hero_with_split_columns": {
-              "type": "SharedSlice"
-            },
             "navigation_bar": {
               "type": "SharedSlice"
             },
