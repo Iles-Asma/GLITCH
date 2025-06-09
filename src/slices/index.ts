@@ -7,6 +7,7 @@ export const components = {
   cta: dynamic(() => import("./Button")),
   footer_simple_grid: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
+  intro_text_visuals: dynamic(() => import("./AproposSection")),
   navigation_bar: dynamic(() => import("./NavigationBar")),
   split_title_description: dynamic(() => import("./GlossaireItem")),
   two_column_poem_layout: dynamic(() => import("./Card")),

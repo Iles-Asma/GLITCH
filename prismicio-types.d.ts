@@ -701,6 +701,108 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *AproposSection → Default → Primary → Secondary Visual Blocks*
+ */
+export interface IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem {
+  /**
+   * Image field in *AproposSection → Default → Primary → Secondary Visual Blocks*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.secondary_visuals[].secondary_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  secondary_image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *AproposSection → Default → Primary → Secondary Visual Blocks*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.secondary_visuals[].secondary_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  secondary_text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *AproposSection → Default → Primary*
+ */
+export interface IntroTextVisualsSliceDefaultPrimary {
+  /**
+   * Title field in *AproposSection → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Main Rich Text Block field in *AproposSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.main_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_text: prismic.RichTextField;
+
+  /**
+   * Main Visual field in *AproposSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.main_visual
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_visual: prismic.ImageField<never>;
+
+  /**
+   * Secondary Visual Blocks field in *AproposSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.secondary_visuals[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  secondary_visuals: prismic.GroupField<
+    Simplify<IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem>
+  >;
+}
+
+/**
+ * Default variation for AproposSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard layout featuring a heading, main text, supporting images, and additional explanatory content.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroTextVisualsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntroTextVisualsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AproposSection*
+ */
+type IntroTextVisualsSliceVariation = IntroTextVisualsSliceDefault;
+
+/**
+ * AproposSection Shared Slice
+ *
+ * - **API ID**: `intro_text_visuals`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroTextVisualsSlice = prismic.SharedSlice<
+  "intro_text_visuals",
+  IntroTextVisualsSliceVariation
+>;
+
+/**
  * Item in *NavigationBar → Default → Primary → Left Links*
  */
 export interface NavigationBarSliceDefaultPrimaryLeftLinksItem {
@@ -985,6 +1087,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IntroTextVisualsSlice,
+      IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem,
+      IntroTextVisualsSliceDefaultPrimary,
+      IntroTextVisualsSliceVariation,
+      IntroTextVisualsSliceDefault,
       NavigationBarSlice,
       NavigationBarSliceDefaultPrimaryLeftLinksItem,
       NavigationBarSliceDefaultPrimaryRightLinksItem,

@@ -1,0 +1,59 @@
+{
+  "type": "SharedSlice",
+  "id": "intro_text_visuals",
+  "name": "AproposSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard layout featuring a heading, main text, supporting images, and additional explanatory content.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "main_text": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Main Rich Text Block"
+          }
+        },
+        "main_visual": {
+          "type": "Image",
+          "config": {
+            "label": "Main Visual"
+          }
+        },
+        "secondary_visuals": {
+          "type": "Group",
+          "config": {
+            "label": "Secondary Visual Blocks",
+            "fields": {
+              "secondary_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "secondary_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "label": "Text"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
