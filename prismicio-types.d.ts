@@ -183,6 +183,7 @@ export interface HomepageDocumentDataArticleitemItem {
 }
 
 type HomepageDocumentDataSlicesSlice =
+  | IntroTextVisualsSlice
   | ArticleReferenceSlice
   | TwoColumnPoemLayoutSlice
   | FooterSimpleGridSlice

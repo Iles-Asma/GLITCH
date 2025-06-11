@@ -54,6 +54,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "intro_text_visuals": {
+              "type": "SharedSlice"
+            },
             "article_reference": {
               "type": "SharedSlice"
             },
