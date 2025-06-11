@@ -5,7 +5,7 @@ import {
 	PrismicRichText,
 	PrismicImage,
 } from "@prismicio/react";
-import styles from "./introTextVisuals.module.css";
+import styles from "./apropos.module.css";
 
 export type IntroTextVisualsProps =
 	SliceComponentProps<Content.IntroTextVisualsSlice>;
