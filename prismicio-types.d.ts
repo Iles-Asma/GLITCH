@@ -44,6 +44,17 @@ interface ArticleDocumentData {
   articledescription: prismic.RichTextField;
 
   /**
+   * Date de publication field in *article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: Ajouter la date du numéro
+   * - **API ID Path**: article.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
    * Slice Zone field in *article*
    *
    * - **Field Type**: Slice Zone

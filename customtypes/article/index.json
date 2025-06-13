@@ -38,6 +38,13 @@
           "multi": "paragraph"
         }
       },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date de publication",
+          "placeholder": "Ajouter la date du numéro"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
