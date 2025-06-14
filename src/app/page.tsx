@@ -20,14 +20,13 @@ export default async function Page() {
   // Fetch all articles
   const allArticles = await client.getAllByType("article");
 
-  // Sort by custom date field (oldest first), safely handle nulls
+  // Sort by date (most recent first)
   const sortedArticles = allArticles
     .filter((article) => article.data.date)
     .sort((a, b) => {
       const dateA = a.data.date ?? "";
       const dateB = b.data.date ?? "";
-      return new Date(dateB).getTime() -new Date(dateA).getTime();
-	  
+      return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
 
   return (
@@ -36,7 +35,14 @@ export default async function Page() {
         <PrismicRichText field={page.data.title} />
       </div>
 
-      {/* Hero section — articles affichés directement après le titre */}
+      {/* Slices (e.g. Hero, About, etc.) */}
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
+        context={{ featured: sortedArticles[0] }}
+      />
+
+      {/* Articles section: shown AFTER slices */}
       <section className={styles.articleList}>
         {sortedArticles.map((article) => (
           <Link
@@ -45,16 +51,12 @@ export default async function Page() {
             className={styles.articleCard}
           >
             <PrismicImage field={article.data.articleimage} />
-            <PrismicRichText field={article.data.articletitle} />
+            <div className={styles.title}>
+              <PrismicRichText field={article.data.articletitle} />
+            </div>
           </Link>
         ))}
       </section>
-
-<SliceZone
-  slices={page.data.slices}
-  components={components}
-  context={{ featured: sortedArticles[0] }}
-/>
     </>
   );
 }
