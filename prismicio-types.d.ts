@@ -194,8 +194,8 @@ export interface HomepageDocumentDataArticleitemItem {
 }
 
 type HomepageDocumentDataSlicesSlice =
+  | ArticlesInjectSlice
   | IntroTextVisualsSlice
-  | ArticleReferenceSlice
   | TwoColumnPoemLayoutSlice
   | FooterSimpleGridSlice
   | NavigationBarSlice
@@ -386,65 +386,33 @@ export type AllDocumentTypes =
   | SitetitleDocument;
 
 /**
- * Item in *ArticleReference → Default → Primary → article*
- */
-export interface ArticleReferenceSliceDefaultPrimaryArticleItem {
-  /**
-   * articlePage field in *ArticleReference → Default → Primary → article*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_reference.default.primary.article[].articlepage
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  articlepage: prismic.ContentRelationshipField<"article">;
-}
-
-/**
- * Primary content in *ArticleReference → Default → Primary*
- */
-export interface ArticleReferenceSliceDefaultPrimary {
-  /**
-   * article field in *ArticleReference → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_reference.default.primary.article[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  article: prismic.GroupField<
-    Simplify<ArticleReferenceSliceDefaultPrimaryArticleItem>
-  >;
-}
-
-/**
- * Default variation for ArticleReference Slice
+ * Default variation for ArticlesInject Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ArticleReferenceSliceDefault = prismic.SharedSliceVariation<
+export type ArticlesInjectSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ArticleReferenceSliceDefaultPrimary>,
+  Record<string, never>,
   never
 >;
 
 /**
- * Slice variation for *ArticleReference*
+ * Slice variation for *ArticlesInject*
  */
-type ArticleReferenceSliceVariation = ArticleReferenceSliceDefault;
+type ArticlesInjectSliceVariation = ArticlesInjectSliceDefault;
 
 /**
- * ArticleReference Shared Slice
+ * ArticlesInject Shared Slice
  *
- * - **API ID**: `article_reference`
- * - **Description**: ArticleReference
+ * - **API ID**: `articles_inject`
+ * - **Description**: ArticlesInject
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ArticleReferenceSlice = prismic.SharedSlice<
-  "article_reference",
-  ArticleReferenceSliceVariation
+export type ArticlesInjectSlice = prismic.SharedSlice<
+  "articles_inject",
+  ArticlesInjectSliceVariation
 >;
 
 /**
@@ -1080,11 +1048,9 @@ declare module "@prismicio/client" {
       SitetitleDocumentData,
       SitetitleDocumentDataNavigationItem,
       AllDocumentTypes,
-      ArticleReferenceSlice,
-      ArticleReferenceSliceDefaultPrimaryArticleItem,
-      ArticleReferenceSliceDefaultPrimary,
-      ArticleReferenceSliceVariation,
-      ArticleReferenceSliceDefault,
+      ArticlesInjectSlice,
+      ArticlesInjectSliceVariation,
+      ArticlesInjectSliceDefault,
       CtaSlice,
       CtaSliceSimplePrimary,
       CtaSliceVariation,

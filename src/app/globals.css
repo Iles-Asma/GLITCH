@@ -1,7 +1,10 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--font-anonymous: 'Anonymous Pro', monospace;
+	--font-dosis: 'Dosis', sans-serif;
 }
+
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -13,15 +16,33 @@ html,
 body {
 	max-width: 100vw;
 	overflow-x: hidden;
+
 }
 
 body {
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--background);
+	font-family: var(--font-anonymous);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+	font-family: var(--font-anonymous);
+}
+img{
+		  filter: grayscale(100%);
+
+}
 * {
 	box-sizing: border-box;
 	padding: 0;

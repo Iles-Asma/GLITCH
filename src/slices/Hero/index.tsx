@@ -22,21 +22,22 @@ const Hero: FC<HeroProps> = ({ slice, context }) => {
       data-slice-variation={slice.variation}
     >
       <div className={styles.textContainer}>
-        <h2 className={styles.title}>
-          <PrismicRichText field={article.data.articletitle} />
-        </h2>
+       <div className={styles.title}>
+  <PrismicRichText field={article.data.articletitle} />
+</div>
         <div className={styles.description}>
           <PrismicRichText field={article.data.articledescription} />
         </div>
 
         <Link href={`/article/${article.uid}`} className={styles.button}>
-          Voir plus
+          découvrir
         </Link>
       </div>
 
       <div className={styles.imageContainer}>
         <PrismicImage field={article.data.articleimage} className={styles.image} />
       </div>
+      
     </section>
   );
 };

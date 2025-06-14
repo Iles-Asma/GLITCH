@@ -54,10 +54,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "intro_text_visuals": {
+            "articles_inject": {
               "type": "SharedSlice"
             },
-            "article_reference": {
+            "intro_text_visuals": {
               "type": "SharedSlice"
             },
             "two_column_poem_layout": {

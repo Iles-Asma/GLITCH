@@ -1,3 +1,5 @@
+
+
 .page {
 	--gray-rgb: 0, 0, 0;
 	--gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -39,6 +41,8 @@
 	display: flex;
 	justify-content: center;
 	margin: 20px;
+	text-transform: uppercase;
+	font-size: 2.55vw;
 	
 }
 
@@ -116,6 +120,8 @@ a.secondary {
 	flex-shrink: 0;
 }
 
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 	a.primary:hover {
@@ -169,6 +175,27 @@ a.secondary {
 	}
 }
 
+/* 👇 INSÈRE ICI */
+@media (max-width: 855px) and (min-width: 768px) {
+  .pageTitle {
+    font-size: 2.4vw;
+    
+  }
+}
+
+@media  (max-width: 768px) {
+  .pageTitle {
+   display: none;
+    
+  }
+}
+
+@media  (min-width: 768px) {
+  .pageTitle {
+   padding-top: .7rem;
+    
+  }
+}
 @media (prefers-color-scheme: dark) {
 	.logo {
 		filter: invert();
@@ -214,3 +241,4 @@ a.secondary {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
