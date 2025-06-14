@@ -6,7 +6,7 @@ import {
 } from "@prismicio/react";
 import Link from "next/link";
 import { Content } from "@prismicio/client";
-import styles from "./Hero.module.css";
+import styles from "./hero.module.css";
 
 type HeroProps = SliceComponentProps<Content.HeroSlice, { featured: any }>;
 

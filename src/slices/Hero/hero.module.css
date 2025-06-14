@@ -1,21 +1,24 @@
 .heroSection {
 	display: flex;
+	flex-direction: column-reverse;
 	align-items: center;
-	justify-content: space-between;
-	padding: 4rem 2rem;
+	justify-content: center;
+	padding: 2rem 1rem;
 	background-color: white;
+	text-align: center;
+	min-height: 70vh; /* 💡 Mobile aussi */
 }
 
 .textContainer {
-	flex: 1;
-	padding-right: 2rem;
+	width: 100%;
+	padding: 1rem 0;
 	text-align: center;
 }
 
 .title {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: bold;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 	text-transform: uppercase;
 }
 
@@ -35,14 +38,52 @@
 	text-decoration: none;
 	font-weight: bold;
 	border-radius: 4px;
+	width: fit-content;
+	margin: auto;
 }
 
 .imageContainer {
-	flex: 1;
+	width: 100%;
+	margin-bottom: 1.5rem;
+	overflow: hidden;
 }
 
 .image {
 	width: 100%;
-	height: auto;
+	/* height: auto; */
 	object-fit: cover;
+	aspect-ratio: 4 / 5;
+}
+
+/* ✅ Desktop layout */
+@media (min-width: 768px) {
+	.heroSection {
+		flex-direction: row;
+		text-align: left;
+		height: 70vh; /* 🔥 force une hauteur */
+	}
+
+	.textContainer {
+		flex: 1;
+		padding-right: 2rem;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.imageContainer {
+		flex: 1;
+		height: 100%; /* 👈 prend 100% de la section */
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%; /* 👈 remplis toute la section */
+		object-fit: cover;
+	}
 }
