@@ -1,0 +1,16 @@
+{
+  "id": "articles_inject",
+  "type": "SharedSlice",
+  "name": "ArticlesInject",
+  "description": "ArticlesInject",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
