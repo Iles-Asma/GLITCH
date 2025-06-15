@@ -21,11 +21,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 								</PrismicLink>
 							) : null
 						)}
-						{slice.primary.phone && (
-							<span className={styles.phone}>
-								{slice.primary.phone}
-							</span>
-						)}
+						
 					</div>
 				</div>
 				<div className={styles.centerBlock}>
@@ -48,7 +44,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="icons/Instagram.svg"
+								src="/instagram.svg"
 								alt="Instagram"
 								width={48}
 								height={48}
@@ -60,7 +56,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="icons/facebook.svg"
+								src="/facebook.svg"
 								width={48}
 								height={48}
 								alt="Facebook"
@@ -72,7 +68,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="icons/youtube.svg"
+								src="/youtube.svg"
 								width={48}
 								height={48}
 								alt="YouTube"

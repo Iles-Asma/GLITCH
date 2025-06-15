@@ -65,12 +65,12 @@
 .socialIcons {
 	display: flex;
 	gap: 1rem;
+	
 }
 
 .socialIcons img {
 	width: 32px;
 	height: 32px;
-	padding: 4px;
 }
 
 .socialIcons a:hover img {
@@ -118,7 +118,7 @@
 /* Responsive pour tablettes et desktop */
 @media screen and (min-width: 768px) {
 	.topSection {
-		grid-template-columns: 5fr 1fr 1fr;
+		grid-template-columns: 5fr 5fr 1fr;
 		gap: 4rem;
 	}
 
@@ -127,12 +127,14 @@
 	}
 
 	.rightBlock {
-		text-align: right;
+		text-align: left;
 	}
 
 	.rightBlock .socialIcons {
-		justify-content: flex-end;
+		justify-content: space-between;
 	}
+
+	
 }
 
 /* Mobile uniquement */
@@ -152,3 +154,4 @@
 		justify-self: center;
 	}
 }
+
