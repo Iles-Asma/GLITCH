@@ -66,6 +66,17 @@ interface ArticleDocumentData {
   pdf: prismic.LinkToMediaField<prismic.FieldState, never>;
 
   /**
+   * Abstract field in *article*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.abstract
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  abstract: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *article*
    *
    * - **Field Type**: Slice Zone

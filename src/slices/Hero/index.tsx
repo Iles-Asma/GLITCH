@@ -25,8 +25,8 @@ const Hero: FC<HeroProps> = ({ slice, context }) => {
 				<div className={styles.title}>
 					<PrismicRichText field={article.data.articletitle} />
 				</div>
-				<div className={styles.description}>
-					<PrismicRichText field={article.data.articledescription} />
+				<div className={styles.abstract}>
+					<PrismicRichText field={article.data.abstract} />
 				</div>
 
 				<Link
