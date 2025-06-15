@@ -118,12 +118,12 @@
 /* Responsive pour tablettes et desktop */
 @media screen and (min-width: 768px) {
 	.topSection {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 5fr 1fr 1fr;
 		gap: 4rem;
 	}
 
 	.centerBlock {
-		text-align: center;
+		text-align: left;
 	}
 
 	.rightBlock {
