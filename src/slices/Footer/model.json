@@ -11,17 +11,10 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "main_message": {
-          "type": "StructuredText",
-          "config": {
-            "multi": "heading3",
-            "label": "Main Message"
-          }
-        },
         "links": {
           "type": "Group",
           "config": {
-            "label": "Navigation and Contact Links",
+            "label": "Navigation Links",
             "fields": {
               "label": {
                 "type": "Text",
@@ -41,16 +34,33 @@
             }
           }
         },
-        "socials": {
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email"
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone"
+          }
+        },
+        "copyright": {
+          "type": "Text",
+          "config": {
+            "label": "Copyright Text"
+          }
+        },
+        "footer_links": {
           "type": "Group",
           "config": {
-            "label": "Social Icons",
+            "label": "Bottom Footer Links",
             "fields": {
-              "platform": {
-                "type": "Select",
+              "label": {
+                "type": "Text",
                 "config": {
-                  "label": "Platform",
-                  "options": ["instagram", "facebook", "youtube"]
+                  "label": "Label"
                 }
               },
               "url": {

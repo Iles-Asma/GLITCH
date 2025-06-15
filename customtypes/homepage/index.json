@@ -12,7 +12,7 @@
           "label": "Title",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "heading1,strong"
+          "multi": "paragraph,strong,heading1"
         }
       },
       "uid": {

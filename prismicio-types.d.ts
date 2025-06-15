@@ -485,11 +485,11 @@ type CtaSliceVariation = CtaSliceSimple;
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
 
 /**
- * Item in *Footer → Default → Primary → Navigation and Contact Links*
+ * Item in *Footer → Default → Primary → Navigation Links*
  */
 export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
   /**
-   * Label field in *Footer → Default → Primary → Navigation and Contact Links*
+   * Label field in *Footer → Default → Primary → Navigation Links*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -499,7 +499,7 @@ export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
   label: prismic.KeyTextField;
 
   /**
-   * URL field in *Footer → Default → Primary → Navigation and Contact Links*
+   * URL field in *Footer → Default → Primary → Navigation Links*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -510,25 +510,25 @@ export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
 }
 
 /**
- * Item in *Footer → Default → Primary → Social Icons*
+ * Item in *Footer → Default → Primary → Bottom Footer Links*
  */
-export interface FooterSimpleGridSliceDefaultPrimarySocialsItem {
+export interface FooterSimpleGridSliceDefaultPrimaryFooterLinksItem {
   /**
-   * Platform field in *Footer → Default → Primary → Social Icons*
+   * Label field in *Footer → Default → Primary → Bottom Footer Links*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.socials[].platform
-   * - **Documentation**: https://prismic.io/docs/field#select
+   * - **API ID Path**: footer_simple_grid.default.primary.footer_links[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  platform: prismic.SelectField<"instagram" | "facebook" | "youtube">;
+  label: prismic.KeyTextField;
 
   /**
-   * URL field in *Footer → Default → Primary → Social Icons*
+   * URL field in *Footer → Default → Primary → Bottom Footer Links*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.socials[].url
+   * - **API ID Path**: footer_simple_grid.default.primary.footer_links[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   url: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
@@ -539,17 +539,7 @@ export interface FooterSimpleGridSliceDefaultPrimarySocialsItem {
  */
 export interface FooterSimpleGridSliceDefaultPrimary {
   /**
-   * Main Message field in *Footer → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.main_message
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  main_message: prismic.RichTextField;
-
-  /**
-   * Navigation and Contact Links field in *Footer → Default → Primary*
+   * Navigation Links field in *Footer → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -561,15 +551,45 @@ export interface FooterSimpleGridSliceDefaultPrimary {
   >;
 
   /**
-   * Social Icons field in *Footer → Default → Primary*
+   * Email field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_simple_grid.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Phone field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_simple_grid.default.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Copyright Text field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_simple_grid.default.primary.copyright
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Bottom Footer Links field in *Footer → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.socials[]
+   * - **API ID Path**: footer_simple_grid.default.primary.footer_links[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  socials: prismic.GroupField<
-    Simplify<FooterSimpleGridSliceDefaultPrimarySocialsItem>
+  footer_links: prismic.GroupField<
+    Simplify<FooterSimpleGridSliceDefaultPrimaryFooterLinksItem>
   >;
 }
 
@@ -1068,7 +1088,7 @@ declare module "@prismicio/client" {
       CtaSliceSimple,
       FooterSimpleGridSlice,
       FooterSimpleGridSliceDefaultPrimaryLinksItem,
-      FooterSimpleGridSliceDefaultPrimarySocialsItem,
+      FooterSimpleGridSliceDefaultPrimaryFooterLinksItem,
       FooterSimpleGridSliceDefaultPrimary,
       FooterSimpleGridSliceVariation,
       FooterSimpleGridSliceDefault,
