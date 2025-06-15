@@ -55,6 +55,17 @@ interface ArticleDocumentData {
   date: prismic.DateField;
 
   /**
+   * pdf field in *article*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: entrer le pdf
+   * - **API ID Path**: article.pdf
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  pdf: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
    * Slice Zone field in *article*
    *
    * - **Field Type**: Slice Zone
