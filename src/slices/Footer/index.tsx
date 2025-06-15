@@ -13,11 +13,13 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 				<div className={styles.leftBlock}>
 					<h4>PLAN DU SITE</h4>
 					<div className={styles.navLinks}>
-						{slice.primary.links.map((item, index) => (
-							<PrismicLink field={item.url} key={index}>
-								{item.label}
-							</PrismicLink>
-						))}
+						{slice.primary.links?.map((item, index) =>
+							item.url && item.label ? (
+								<PrismicLink field={item.url} key={index}>
+									{item.label}
+								</PrismicLink>
+							) : null
+						)}
 						{slice.primary.phone && (
 							<span className={styles.phone}>
 								{slice.primary.phone}
@@ -44,7 +46,10 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img src="/icons/instagram.svg" alt="Instagram" />
+							<img
+								src="/public/icon/Instagram.png"
+								alt="Instagram"
+							/>
 						</a>
 						<a
 							href="https://facebook.com"
@@ -67,13 +72,21 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 				<span className={styles.copyright}>
 					{slice.primary.copyright || "©2025 BUG"}
 				</span>
-				<div className={styles.footerLinks}>
-					{slice.primary.footer_links?.map((link, index) => (
-						<PrismicLink field={link.url} key={index}>
+				{slice.primary.footer_links?.map((link, index) =>
+					link.url && link.label ? (
+						<PrismicLink
+							field={link.url}
+							key={index}
+							className={
+								index === 0
+									? styles.centerLink
+									: styles.rightLink
+							}
+						>
 							{link.label}
 						</PrismicLink>
-					))}
-				</div>
+					) : null
+				)}
 			</div>
 		</footer>
 	);

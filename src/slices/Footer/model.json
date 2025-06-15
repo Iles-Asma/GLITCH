@@ -1,82 +1,84 @@
 {
-  "type": "SharedSlice",
-  "id": "footer_simple_grid",
-  "name": "Footer",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "description": "Basic three-column footer grid with message, navigation/contact, and social links.",
-      "version": "initial",
-      "imageUrl": "",
-      "docURL": "...",
-      "primary": {
-        "links": {
-          "type": "Group",
-          "config": {
-            "label": "Navigation Links",
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "Label"
-                }
-              },
-              "url": {
-                "type": "Link",
-                "config": {
-                  "label": "URL",
-                  "allowText": false,
-                  "repeat": false,
-                  "select": null
-                }
-              }
-            }
-          }
-        },
-        "email": {
-          "type": "Text",
-          "config": {
-            "label": "Email"
-          }
-        },
-        "phone": {
-          "type": "Text",
-          "config": {
-            "label": "Phone"
-          }
-        },
-        "copyright": {
-          "type": "Text",
-          "config": {
-            "label": "Copyright Text"
-          }
-        },
-        "footer_links": {
-          "type": "Group",
-          "config": {
-            "label": "Bottom Footer Links",
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "Label"
-                }
-              },
-              "url": {
-                "type": "Link",
-                "config": {
-                  "label": "URL",
-                  "allowText": false,
-                  "repeat": false,
-                  "select": null
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    }
-  ]
+	"type": "SharedSlice",
+	"id": "footer_simple_grid",
+	"name": "FooterSimpleGrid",
+	"description": "Footer with grid layout containing site map, contact info, social media and legal links",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default footer layout",
+			"imageUrl": "",
+			"primary": {
+				"email": {
+					"type": "Text",
+					"config": {
+						"label": "Email",
+						"placeholder": "contact@example.com"
+					}
+				},
+				"phone": {
+					"type": "Text",
+					"config": {
+						"label": "Téléphone",
+						"placeholder": "+33 6 89 69 21 14"
+					}
+				},
+				"copyright": {
+					"type": "Text",
+					"config": {
+						"label": "Copyright",
+						"placeholder": "©2025 BUG"
+					}
+				},
+				"links": {
+					"type": "Group",
+					"config": {
+						"label": "Liens du plan du site",
+						"fields": {
+							"label": {
+								"type": "Text",
+								"config": {
+									"label": "Label du lien",
+									"placeholder": "ACCUEIL"
+								}
+							},
+							"url": {
+								"type": "Link",
+								"config": {
+									"label": "URL du lien",
+									"placeholder": "/"
+								}
+							}
+						}
+					}
+				},
+				"footer_links": {
+					"type": "Group",
+					"config": {
+						"label": "Liens légaux",
+						"fields": {
+							"label": {
+								"type": "Text",
+								"config": {
+									"label": "Label du lien",
+									"placeholder": "POLITIQUE DE CONFIDENTIALITÉ"
+								}
+							},
+							"url": {
+								"type": "Link",
+								"config": {
+									"label": "URL du lien",
+									"placeholder": "/politique-confidentialite"
+								}
+							}
+						}
+					}
+				}
+			},
+			"items": {}
+		}
+	]
 }
