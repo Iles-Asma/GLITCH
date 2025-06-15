@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicLink } from "@prismicio/react";
 import styles from "./footer.module.css";
+import Image from "next/image";
 
 export type FooterSimpleGridProps =
 	SliceComponentProps<Content.FooterSimpleGridSlice>;
@@ -46,9 +47,11 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img
-								src="/public/icon/Instagram.png"
+							<Image
+								src="icons/Instagram.svg"
 								alt="Instagram"
+								width={48}
+								height={48}
 							/>
 						</a>
 						<a
@@ -56,14 +59,24 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img src="/icons/facebook.svg" alt="Facebook" />
+							<Image
+								src="icons/facebook.svg"
+								width={48}
+								height={48}
+								alt="Facebook"
+							/>
 						</a>
 						<a
 							href="https://youtube.com"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img src="/icons/youtube.svg" alt="YouTube" />
+							<Image
+								src="icons/youtube.svg"
+								width={48}
+								height={48}
+								alt="YouTube"
+							/>
 						</a>
 					</div>
 				</div>
