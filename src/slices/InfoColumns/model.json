@@ -24,7 +24,7 @@
             "label": "EngamentSubtitle",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading2,strong"
+            "multi": "strong,heading3"
           }
         },
         "engagementgroup": {
