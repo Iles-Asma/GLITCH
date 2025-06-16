@@ -1,6 +1,7 @@
 .split {
 	display: flex;
-	min-height: 150px; /* ajuste selon le contenu */
+	min-height: 150px;
+	/* ajuste selon le contenu */
 	font-family: monospace;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -27,5 +28,19 @@
 	align-items: center;
 	border-left: 1px solid #000;
 	font-size: 1.2rem;
-	line-height: 1.6;
+
+	flex-wrap: wrap; /* permet le retour à la ligne */
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+@media screen and (max-width: 768px) {
+.split-left, .split-right{ 
+	padding: 0;
+}
+
+.split-left{
+	font-size: 1rem
+}
+
 }
