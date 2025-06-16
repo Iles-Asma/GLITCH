@@ -1,6 +1,11 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import {
+	SliceComponentProps,
+	PrismicRichText,
+	PrismicText,
+} from "@prismicio/react";
+import styles from "./sengager.module.css";
 
 /**
  * Props for `InfoColumns`.
@@ -11,42 +16,29 @@ export type InfoColumnsProps = SliceComponentProps<Content.InfoColumnsSlice>;
  * Component for "InfoColumns" Slices.
  */
 const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for info_columns (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 📚 Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       */}
-    </section>
-  );
+	return (
+		<section
+			className={styles.section}
+			data-slice-type={slice.slice_type}
+			data-slice-variation={slice.variation}
+		>
+			{slice.primary.title && (
+				<h2 className={styles.title}>
+					<PrismicText field={slice.primary.title} />
+				</h2>
+			)}
+
+			<div className={styles.columns}>
+				{slice.primary.engagementgroup?.map((item, index) => (
+					<div key={index} className={styles.column}>
+						{item.engagementcontent && (
+							<PrismicRichText field={item.engagementcontent} />
+						)}
+					</div>
+				))}
+			</div>
+		</section>
+	);
 };
 
 export default InfoColumns;

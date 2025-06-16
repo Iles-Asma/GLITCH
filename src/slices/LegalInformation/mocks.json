@@ -23,17 +23,29 @@
 							[
 								"label",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "production",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Voluptate aliquip pariatur amet fugiat magna ea quis minim ea anim do cillum."
+											}
+										}
+									]
 								}
 							],
 							[
 								"value",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "pocket",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ea elit do tempor deserunt tempor adipisicing eiusmod eiusmod labore. Do nostrud nisi esse est consectetur ea reprehenderit fugiat deserunt. Nostrud ad nulla duis ullamco dolore duis laborum magna adipisicing."
+											}
+										}
+									]
 								}
 							]
 						]

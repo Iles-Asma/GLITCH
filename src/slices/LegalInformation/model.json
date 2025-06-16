@@ -24,21 +24,28 @@
             "label": "Info Items",
             "fields": {
               "label": {
-                "type": "Text",
+                "type": "StructuredText",
                 "config": {
-                  "label": "Label"
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong"
                 }
               },
               "value": {
-                "type": "Text",
+                "type": "StructuredText",
                 "config": {
-                  "label": "Value"
+                  "label": "value",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong"
                 }
               }
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }
