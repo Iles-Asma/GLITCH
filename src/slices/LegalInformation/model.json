@@ -1,0 +1,44 @@
+{
+  "type": "SharedSlice",
+  "id": "legal_information",
+  "name": "LegalInformation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Displays legal information with a heading and key/value pairs for different required data items.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Heading"
+          }
+        },
+        "info_items": {
+          "type": "Group",
+          "config": {
+            "label": "Info Items",
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label"
+                }
+              },
+              "value": {
+                "type": "Text",
+                "config": {
+                  "label": "Value"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

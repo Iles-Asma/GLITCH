@@ -4,6 +4,82 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type MentionlegaleDocumentDataSlicesSlice = LegalInformationSlice;
+
+/**
+ * Content for MentionLegale documents
+ */
+interface MentionlegaleDocumentData {
+  /**
+   * Title field in *MentionLegale*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Mentionlegale.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *MentionLegale*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Mentionlegale.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<MentionlegaleDocumentDataSlicesSlice> /**
+   * Meta Title field in *MentionLegale*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: Mentionlegale.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *MentionLegale*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: Mentionlegale.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *MentionLegale*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Mentionlegale.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * MentionLegale document from Prismic
+ *
+ * - **API ID**: `Mentionlegale`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MentionlegaleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<MentionlegaleDocumentData>,
+    "Mentionlegale",
+    Lang
+  >;
+
 type ArticleDocumentDataSlicesSlice = never;
 
 /**
@@ -321,6 +397,82 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type SengagerDocumentDataSlicesSlice = InfoColumnsSlice;
+
+/**
+ * Content for sengager documents
+ */
+interface SengagerDocumentData {
+  /**
+   * Title field in *sengager*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sengager.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *sengager*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sengager.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SengagerDocumentDataSlicesSlice> /**
+   * Meta Title field in *sengager*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: sengager.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *sengager*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: sengager.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *sengager*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sengager.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * sengager document from Prismic
+ *
+ * - **API ID**: `sengager`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SengagerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SengagerDocumentData>,
+    "sengager",
+    Lang
+  >;
+
 /**
  * Item in *Header → Navigation*
  */
@@ -402,9 +554,11 @@ export type SitetitleDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | MentionlegaleDocument
   | ArticleDocument
   | GlossaireDocument
   | HomepageDocument
+  | SengagerDocument
   | SitetitleDocument;
 
 /**
@@ -496,24 +650,24 @@ type CtaSliceVariation = CtaSliceSimple;
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
 
 /**
- * Item in *Footer → Default → Primary → Navigation Links*
+ * Item in *FooterSimpleGrid → Default → Primary → Liens du plan du site*
  */
 export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
   /**
-   * Label field in *Footer → Default → Primary → Navigation Links*
+   * Label du lien field in *FooterSimpleGrid → Default → Primary → Liens du plan du site*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: ACCUEIL
    * - **API ID Path**: footer_simple_grid.default.primary.links[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 
   /**
-   * URL field in *Footer → Default → Primary → Navigation Links*
+   * URL du lien field in *FooterSimpleGrid → Default → Primary → Liens du plan du site*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: *None*
+   * - **Placeholder**: /
    * - **API ID Path**: footer_simple_grid.default.primary.links[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
@@ -521,24 +675,24 @@ export interface FooterSimpleGridSliceDefaultPrimaryLinksItem {
 }
 
 /**
- * Item in *Footer → Default → Primary → Bottom Footer Links*
+ * Item in *FooterSimpleGrid → Default → Primary → Liens légaux*
  */
 export interface FooterSimpleGridSliceDefaultPrimaryFooterLinksItem {
   /**
-   * Label field in *Footer → Default → Primary → Bottom Footer Links*
+   * Label du lien field in *FooterSimpleGrid → Default → Primary → Liens légaux*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: POLITIQUE DE CONFIDENTIALITÉ
    * - **API ID Path**: footer_simple_grid.default.primary.footer_links[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 
   /**
-   * URL field in *Footer → Default → Primary → Bottom Footer Links*
+   * URL du lien field in *FooterSimpleGrid → Default → Primary → Liens légaux*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: *None*
+   * - **Placeholder**: /politique-confidentialite
    * - **API ID Path**: footer_simple_grid.default.primary.footer_links[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
@@ -546,11 +700,41 @@ export interface FooterSimpleGridSliceDefaultPrimaryFooterLinksItem {
 }
 
 /**
- * Primary content in *Footer → Default → Primary*
+ * Primary content in *FooterSimpleGrid → Default → Primary*
  */
 export interface FooterSimpleGridSliceDefaultPrimary {
   /**
-   * Navigation Links field in *Footer → Default → Primary*
+   * Email field in *FooterSimpleGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: contact@example.com
+   * - **API ID Path**: footer_simple_grid.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Téléphone field in *FooterSimpleGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: +33 6 89 69 21 14
+   * - **API ID Path**: footer_simple_grid.default.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Copyright field in *FooterSimpleGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ©2025 BUG
+   * - **API ID Path**: footer_simple_grid.default.primary.copyright
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Liens du plan du site field in *FooterSimpleGrid → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -562,37 +746,7 @@ export interface FooterSimpleGridSliceDefaultPrimary {
   >;
 
   /**
-   * Email field in *Footer → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.email
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email: prismic.KeyTextField;
-
-  /**
-   * Phone field in *Footer → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.phone
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  phone: prismic.KeyTextField;
-
-  /**
-   * Copyright Text field in *Footer → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer_simple_grid.default.primary.copyright
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  copyright: prismic.KeyTextField;
-
-  /**
-   * Bottom Footer Links field in *Footer → Default → Primary*
+   * Liens légaux field in *FooterSimpleGrid → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -605,10 +759,10 @@ export interface FooterSimpleGridSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Footer Slice
+ * Default variation for FooterSimpleGrid Slice
  *
  * - **API ID**: `default`
- * - **Description**: Basic three-column footer grid with message, navigation/contact, and social links.
+ * - **Description**: Default footer layout
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FooterSimpleGridSliceDefault = prismic.SharedSliceVariation<
@@ -618,15 +772,15 @@ export type FooterSimpleGridSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Footer*
+ * Slice variation for *FooterSimpleGrid*
  */
 type FooterSimpleGridSliceVariation = FooterSimpleGridSliceDefault;
 
 /**
- * Footer Shared Slice
+ * FooterSimpleGrid Shared Slice
  *
  * - **API ID**: `footer_simple_grid`
- * - **Description**: *None*
+ * - **Description**: Footer with grid layout containing site map, contact info, social media and legal links
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FooterSimpleGridSlice = prismic.SharedSlice<
@@ -721,6 +875,88 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Item in *InfoColumns → card-sengager → Primary → EngagementGroup*
+ */
+export interface InfoColumnsSliceAudienceTiersPrimaryEngagementgroupItem {
+  /**
+   * EngagementContent field in *InfoColumns → card-sengager → Primary → EngagementGroup*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_columns.audience_tiers.primary.engagementgroup[].engagementcontent
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  engagementcontent: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *InfoColumns → card-sengager → Primary*
+ */
+export interface InfoColumnsSliceAudienceTiersPrimary {
+  /**
+   * Main Title field in *InfoColumns → card-sengager → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_columns.audience_tiers.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * EngamentSubtitle field in *InfoColumns → card-sengager → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_columns.audience_tiers.primary.engamentsubtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  engamentsubtitle: prismic.RichTextField;
+
+  /**
+   * EngagementGroup field in *InfoColumns → card-sengager → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_columns.audience_tiers.primary.engagementgroup[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  engagementgroup: prismic.GroupField<
+    Simplify<InfoColumnsSliceAudienceTiersPrimaryEngagementgroupItem>
+  >;
+}
+
+/**
+ * card-sengager variation for InfoColumns Slice
+ *
+ * - **API ID**: `audience_tiers`
+ * - **Description**: Displays structured information for several types of audience or scenarios, typically with a heading, description, and possibly contact information for each.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoColumnsSliceAudienceTiers = prismic.SharedSliceVariation<
+  "audience_tiers",
+  Simplify<InfoColumnsSliceAudienceTiersPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InfoColumns*
+ */
+type InfoColumnsSliceVariation = InfoColumnsSliceAudienceTiers;
+
+/**
+ * InfoColumns Shared Slice
+ *
+ * - **API ID**: `info_columns`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoColumnsSlice = prismic.SharedSlice<
+  "info_columns",
+  InfoColumnsSliceVariation
+>;
 
 /**
  * Item in *AproposSection → Default → Primary → Secondary Visual Blocks*
@@ -822,6 +1058,88 @@ type IntroTextVisualsSliceVariation = IntroTextVisualsSliceDefault;
 export type IntroTextVisualsSlice = prismic.SharedSlice<
   "intro_text_visuals",
   IntroTextVisualsSliceVariation
+>;
+
+/**
+ * Item in *LegalInformation → Default → Primary → Info Items*
+ */
+export interface LegalInformationSliceDefaultPrimaryInfoItemsItem {
+  /**
+   * Label field in *LegalInformation → Default → Primary → Info Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_information.default.primary.info_items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Value field in *LegalInformation → Default → Primary → Info Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_information.default.primary.info_items[].value
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  value: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *LegalInformation → Default → Primary*
+ */
+export interface LegalInformationSliceDefaultPrimary {
+  /**
+   * Heading field in *LegalInformation → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_information.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Info Items field in *LegalInformation → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_information.default.primary.info_items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  info_items: prismic.GroupField<
+    Simplify<LegalInformationSliceDefaultPrimaryInfoItemsItem>
+  >;
+}
+
+/**
+ * Default variation for LegalInformation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Displays legal information with a heading and key/value pairs for different required data items.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LegalInformationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LegalInformationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LegalInformation*
+ */
+type LegalInformationSliceVariation = LegalInformationSliceDefault;
+
+/**
+ * LegalInformation Shared Slice
+ *
+ * - **API ID**: `legal_information`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LegalInformationSlice = prismic.SharedSlice<
+  "legal_information",
+  LegalInformationSliceVariation
 >;
 
 /**
@@ -1076,6 +1394,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      MentionlegaleDocument,
+      MentionlegaleDocumentData,
+      MentionlegaleDocumentDataSlicesSlice,
       ArticleDocument,
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
@@ -1086,6 +1407,9 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataArticleitemItem,
       HomepageDocumentDataSlicesSlice,
+      SengagerDocument,
+      SengagerDocumentData,
+      SengagerDocumentDataSlicesSlice,
       SitetitleDocument,
       SitetitleDocumentData,
       SitetitleDocumentDataNavigationItem,
@@ -1107,11 +1431,21 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      InfoColumnsSlice,
+      InfoColumnsSliceAudienceTiersPrimaryEngagementgroupItem,
+      InfoColumnsSliceAudienceTiersPrimary,
+      InfoColumnsSliceVariation,
+      InfoColumnsSliceAudienceTiers,
       IntroTextVisualsSlice,
       IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem,
       IntroTextVisualsSliceDefaultPrimary,
       IntroTextVisualsSliceVariation,
       IntroTextVisualsSliceDefault,
+      LegalInformationSlice,
+      LegalInformationSliceDefaultPrimaryInfoItemsItem,
+      LegalInformationSliceDefaultPrimary,
+      LegalInformationSliceVariation,
+      LegalInformationSliceDefault,
       NavigationBarSlice,
       NavigationBarSliceDefaultPrimaryLeftLinksItem,
       NavigationBarSliceDefaultPrimaryRightLinksItem,

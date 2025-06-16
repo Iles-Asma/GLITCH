@@ -5,9 +5,11 @@ import dynamic from "next/dynamic";
 export const components = {
   articles_inject: dynamic(() => import("./ArticlesInject")),
   cta: dynamic(() => import("./Button")),
-  footer_simple_grid: dynamic(() => import("./Footer")),
+  footer_simple_grid: dynamic(() => import("./FooterSimpleGrid")),
   hero: dynamic(() => import("./Hero")),
+  info_columns: dynamic(() => import("./InfoColumns")),
   intro_text_visuals: dynamic(() => import("./AproposSection")),
+  legal_information: dynamic(() => import("./LegalInformation")),
   navigation_bar: dynamic(() => import("./NavigationBar")),
   split_title_description: dynamic(() => import("./GlossaireItem")),
   two_column_poem_layout: dynamic(() => import("./Card")),

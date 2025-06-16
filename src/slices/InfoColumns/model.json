@@ -1,0 +1,52 @@
+{
+  "type": "SharedSlice",
+  "id": "info_columns",
+  "name": "InfoColumns",
+  "variations": [
+    {
+      "id": "audience_tiers",
+      "name": "card-sengager",
+      "description": "Displays structured information for several types of audience or scenarios, typically with a heading, description, and possibly contact information for each.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Main Title"
+          }
+        },
+        "engamentsubtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "EngamentSubtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,strong"
+          }
+        },
+        "engagementgroup": {
+          "type": "Group",
+          "config": {
+            "label": "EngagementGroup",
+            "repeat": true,
+            "fields": {
+              "engagementcontent": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "EngagementContent",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
