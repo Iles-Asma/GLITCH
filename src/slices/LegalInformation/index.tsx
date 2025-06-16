@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import styles from "./LegalInformation.module.css";
+import styles from "./mentionLegale.module.css";
 
 /**
  * Props for `LegalInformation`.
