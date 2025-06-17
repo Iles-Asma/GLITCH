@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "audience_tiers",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Image"
-						}
-					}
-				]
-			},
 			"engamentsubtitle": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -46,6 +35,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"cardTitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Honor"
+						}
 					}
 				]
 			}

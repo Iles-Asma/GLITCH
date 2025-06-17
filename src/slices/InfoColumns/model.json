@@ -11,11 +11,13 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "title": {
+        "cardTitle": {
           "type": "StructuredText",
           "config": {
-            "single": "heading2",
-            "label": "Main Title"
+            "label": "cardTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "engamentsubtitle": {

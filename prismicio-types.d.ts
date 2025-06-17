@@ -964,14 +964,14 @@ export interface InfoColumnsSliceAudienceTiersPrimaryEngagementgroupItem {
  */
 export interface InfoColumnsSliceAudienceTiersPrimary {
   /**
-   * Main Title field in *InfoColumns → card-sengager → Primary*
+   * cardTitle field in *InfoColumns → card-sengager → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: info_columns.audience_tiers.primary.title
+   * - **API ID Path**: info_columns.audience_tiers.primary.cardTitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.TitleField;
+  cardTitle: prismic.TitleField;
 
   /**
    * EngamentSubtitle field in *InfoColumns → card-sengager → Primary*
