@@ -22,20 +22,24 @@ const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			{slice.primary.title && (
-				<h2 className={styles.title}>
-					<PrismicText field={slice.primary.title} />
-				</h2>
-			)}
+			<div className={styles.card}>
+				{slice.primary.title && (
+					<h2 className={styles.title}>
+						<PrismicText field={slice.primary.title} />
+					</h2>
+				)}
 
-			<div className={styles.columns}>
-				{slice.primary.engagementgroup?.map((item, index) => (
-					<div key={index} className={styles.column}>
-						{item.engagementcontent && (
-							<PrismicRichText field={item.engagementcontent} />
-						)}
-					</div>
-				))}
+				<div className={styles.items}>
+					{slice.primary.engagementgroup?.map((item, index) => (
+						<div key={index} className={styles.item}>
+							{item.engagementcontent && (
+								<PrismicRichText
+									field={item.engagementcontent}
+								/>
+							)}
+						</div>
+					))}
+				</div>
 			</div>
 		</section>
 	);
