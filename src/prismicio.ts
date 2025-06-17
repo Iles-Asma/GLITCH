@@ -24,6 +24,7 @@ const routes: Route[] = [
 	{ type: "article", path: "/:uid" },
 	{ type: "sengager", path: "/sengager" },
 	{ type: "Mentionlegale", path: "/mentionlegale" },
+	{ type: "politiqueConfidentialite", path: "/politiqueConfidentialite" },
 ];
 
 /**
