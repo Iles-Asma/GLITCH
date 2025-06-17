@@ -431,26 +431,24 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageTitleDocumentDataSlicesSlice = never;
-
 /**
- * Content for Page_title documents
+ * Content for PageTitle documents
  */
 interface PageTitleDocumentData {
   /**
-   * Slice Zone field in *Page_title*
+   * Title field in *PageTitle*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page_title.slices[]
+   * - **API ID Path**: page_title.title
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  slices: prismic.SliceZone<PageTitleDocumentDataSlicesSlice>;
+  title: prismic.RichTextField;
 }
 
 /**
- * Page_title document from Prismic
+ * PageTitle document from Prismic
  *
  * - **API ID**: `page_title`
  * - **Repeatable**: `false`
@@ -1482,7 +1480,6 @@ declare module "@prismicio/client" {
       NavigationDocumentDataSlicesSlice,
       PageTitleDocument,
       PageTitleDocumentData,
-      PageTitleDocumentDataSlicesSlice,
       SengagerDocument,
       SengagerDocumentData,
       SengagerDocumentDataSlicesSlice,

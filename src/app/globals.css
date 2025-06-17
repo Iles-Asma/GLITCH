@@ -72,6 +72,8 @@ h1{
 	padding: 1rem 2rem;
 	background-color: white;
 	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family: var(--font-geist-sans, sans-serif);
@@ -92,4 +94,31 @@ h1{
 	left: 50%;
 	transform: translateX(-50%);
 	pointer-events: none;
+}
+.global-page-title p {
+    text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
+@media (max-width: 855px) and (min-width: 768px) {
+  .global-page-title p {
+    font-size: 2.4vw;
+    text-align: center;
+  }
+}
+
+@media  (max-width: 768px) {
+  .global-page-title p {
+   display: none;
+    
+  }
+}
+
+@media  (min-width: 768px) {
+  .global-page-title p {
+   padding-top: .7rem;
+    font-size: 5vw;
+	text-align: center;
+  }
 }

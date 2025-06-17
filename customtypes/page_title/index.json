@@ -1,16 +1,18 @@
 {
   "format": "custom",
   "id": "page_title",
-  "label": "Page_title",
+  "label": "PageTitle",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "title": {
+        "type": "StructuredText",
         "config": {
-          "choices": {}
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       }
     }
