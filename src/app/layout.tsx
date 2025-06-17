@@ -34,9 +34,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						))}
 					</div>
 
-					<div className="custom-nav-center">
-						<PrismicRichText field={slice?.primary.center_title} />
-					</div>
+					
+  <PrismicLink field={slice?.primary.center_title}>
+    {slice?.primary.center_title?.text || "Accueil"}
+  </PrismicLink>
+
+
 
 					<div className="custom-nav-right">
 						{slice?.primary.right_links?.map((item: any, index: number) => (

@@ -29,10 +29,14 @@
           }
         },
         "center_title": {
-          "type": "StructuredText",
+          "type": "Link",
           "config": {
-            "single": "heading3",
-            "label": "Center Title"
+            "label": "center_title",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
           }
         },
         "right_links": {
@@ -52,7 +56,8 @@
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

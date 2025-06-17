@@ -12,8 +12,8 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "7d035c80-25b4-414a-b8fb-1d07b94b9940",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://slicemachine.dev",
@@ -22,17 +22,6 @@
 								}
 							]
 						]
-					}
-				]
-			},
-			"center_title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Shown"
-						}
 					}
 				]
 			},
@@ -45,8 +34,8 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "e27e4c40-4a4d-4acd-b46b-2bdaf7f5c062",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://slicemachine.dev",
@@ -57,6 +46,15 @@
 						]
 					}
 				]
+			},
+			"center_title": {
+				"key": "b8377707-91be-451e-a565-1418f7bcd4a2",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "refused"
+				}
 			}
 		},
 		"items": []

@@ -60,9 +60,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className={styles.pageTitle}>
-        <PrismicRichText field={page.data.title} />
-      </div>
+     
 
       <SliceZone
         slices={slicesWithArticles}

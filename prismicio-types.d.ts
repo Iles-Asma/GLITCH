@@ -1257,14 +1257,20 @@ export interface NavigationBarSliceDefaultPrimary {
   >;
 
   /**
-   * Center Title field in *NavigationBar → Default → Primary*
+   * center_title field in *NavigationBar → Default → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: navigation_bar.default.primary.center_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  center_title: prismic.TitleField;
+  center_title: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Right Links field in *NavigationBar → Default → Primary*
