@@ -116,9 +116,13 @@ h1{
 }
 
 @media  (min-width: 768px) {
-  .global-page-title p {
-   padding-top: .7rem;
-    font-size: 5vw;
-	text-align: center;
+ 
+
+   .global-page-title p {
+   font-size: calc(100vw / 20); /* Ajuste dynamiquement */
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+	
   }
 }

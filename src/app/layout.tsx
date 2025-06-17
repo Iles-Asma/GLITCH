@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const slice = navigation.data.slices?.[0];
 
 	return (
-		<html lang="fr">
+		<html lang="fr" data-arp="">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<div className="global-page-title">
 					<PrismicRichText field={pageTitle.data.title} />
