@@ -34,6 +34,7 @@ const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
 				)}
 
 				<div className={styles.items}>
+					<PrismicRichText field={slice.primary.engamentsubtitle} />
 					{slice.primary.engagementgroup?.map((item, index) => (
 						<div key={index} className={styles.item}>
 							{item.engagementcontent && (
