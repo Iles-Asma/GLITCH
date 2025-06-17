@@ -14,8 +14,10 @@
         "heading": {
           "type": "StructuredText",
           "config": {
-            "single": "heading3",
-            "label": "Heading"
+            "label": "LegaleTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading4"
           }
         },
         "info_items": {
@@ -23,15 +25,6 @@
           "config": {
             "label": "Info Items",
             "fields": {
-              "label": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "label",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,strong"
-                }
-              },
               "value": {
                 "type": "StructuredText",
                 "config": {

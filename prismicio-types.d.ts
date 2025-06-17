@@ -1143,16 +1143,6 @@ export type IntroTextVisualsSlice = prismic.SharedSlice<
  */
 export interface LegalInformationSliceDefaultPrimaryInfoItemsItem {
   /**
-   * label field in *LegalInformation → Default → Primary → Info Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: legal_information.default.primary.info_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  label: prismic.RichTextField;
-
-  /**
    * value field in *LegalInformation → Default → Primary → Info Items*
    *
    * - **Field Type**: Rich Text
@@ -1168,7 +1158,7 @@ export interface LegalInformationSliceDefaultPrimaryInfoItemsItem {
  */
 export interface LegalInformationSliceDefaultPrimary {
   /**
-   * Heading field in *LegalInformation → Default → Primary*
+   * LegaleTitle field in *LegalInformation → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*

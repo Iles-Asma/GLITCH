@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading3",
+						"type": "heading4",
 						"content": {
-							"text": "Plain"
+							"text": "Related"
 						}
 					}
 				]
@@ -20,20 +20,6 @@
 					{
 						"__TYPE__": "GroupItemContent",
 						"value": [
-							[
-								"label",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Voluptate aliquip pariatur amet fugiat magna ea quis minim ea anim do cillum."
-											}
-										}
-									]
-								}
-							],
 							[
 								"value",
 								{

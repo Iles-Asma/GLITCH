@@ -19,25 +19,22 @@ const LegalInformation: FC<LegalInformationProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			<div className={styles.heading}>
-				<PrismicRichText field={slice.primary.heading} />
-			</div>
+			<div className={styles.container}>
+				<div className={styles.heading}>
+					<PrismicRichText field={slice.primary.heading} />
+				</div>
 
-			<div className={styles.items}>
-				{slice.primary.info_items?.map((item, index) => (
-					<div key={index} className={styles.item}>
-						{item.label && (
-							<div className={styles.label}>
-								<PrismicRichText field={item.label} />
-							</div>
-						)}
-						{item.value && (
-							<div className={styles.value}>
-								<PrismicRichText field={item.value} />
-							</div>
-						)}
-					</div>
-				))}
+				<div className={styles.items}>
+					{slice.primary.info_items?.map((item, index) => (
+						<div key={index} className={styles.item}>
+							{item.value && (
+								<div className={styles.value}>
+									<PrismicRichText field={item.value} />
+								</div>
+							)}
+						</div>
+					))}
+				</div>
 			</div>
 		</section>
 	);
