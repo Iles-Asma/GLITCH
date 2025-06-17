@@ -1,10 +1,12 @@
 .footer {
 	font-family: sans-serif;
-	border-top: 1px solid #000;
+	border-top: 1px solid #ffffff;
 	padding: 2rem;
 	display: grid;
 	grid-template-rows: 1fr auto;
 	gap: 6rem;
+	color: white;
+	background-color: black;
 }
 
 .topSection {
@@ -39,7 +41,7 @@
 }
 
 .navLinks a {
-	color: black;
+	color: rgb(255, 255, 255);
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -71,6 +73,8 @@
 .socialIcons img {
 	width: 32px;
 	height: 32px;
+		background-color: #ffffff;
+
 }
 
 .socialIcons a:hover img {
@@ -81,11 +85,12 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: center;
-	border-top: 1px solid #000;
+	border-top: 1px solid #ffffff;
 	padding-top: 1rem;
 	gap: 1rem;
 	font-size: 0.875rem;
 	text-transform: uppercase;
+	
 }
 
 .copyright {
@@ -94,7 +99,7 @@
 }
 
 .centerLink {
-	color: black;
+	color: rgb(255, 255, 255);
 	text-decoration: none;
 	font-weight: 500;
 	justify-self: center;
@@ -105,7 +110,7 @@
 }
 
 .rightLink {
-	color: black;
+	color: rgb(232, 232, 232);
 	text-decoration: none;
 	font-weight: 500;
 	justify-self: end;

@@ -1,3 +1,4 @@
+
 .heroSection {
 	display: flex;
 	flex-direction: column-reverse;
@@ -7,6 +8,8 @@
 	background-color: white;
 	text-align: center;
 	min-height: 70vh; /* 💡 Mobile aussi */
+	border-bottom: solid 1px #ccc;
+		text-transform: uppercase;
 }
 
 .textContainer {
@@ -16,9 +19,9 @@
 }
 
 .title {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: bold;
-	margin-bottom: 1rem;
+	margin:0 0 1rem;
 	text-transform: uppercase;
 }
 
@@ -45,7 +48,6 @@
 
 .imageContainer {
 	width: 100%;
-	margin-bottom: 1.5rem;
 	overflow: hidden;
 }
 
@@ -53,7 +55,7 @@
 	width: 100%;
 	/* height: auto; */
 	object-fit: cover;
-	aspect-ratio: 4 / 5;
+	/* aspect-ratio: 4 / 5; */
 
 }
 
@@ -63,7 +65,14 @@
 		flex-direction: row;
 		text-align: left;
 		height: 75vh; /* 🔥 force une hauteur */
+
 	}
+	.title {
+	font-size: 2rem;
+	font-weight: bold;
+	margin:0 0 1rem;
+	text-transform: uppercase;
+}
 
 	.textContainer {
 		flex: 1;

@@ -397,6 +397,74 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type NavigationDocumentDataSlicesSlice = NavigationBarSlice;
+
+/**
+ * Content for navigation documents
+ */
+interface NavigationDocumentData {
+  /**
+   * Slice Zone field in *navigation*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NavigationDocumentDataSlicesSlice>;
+}
+
+/**
+ * navigation document from Prismic
+ *
+ * - **API ID**: `navigation`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavigationDocumentData>,
+    "navigation",
+    Lang
+  >;
+
+type PageTitleDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Page_title documents
+ */
+interface PageTitleDocumentData {
+  /**
+   * Slice Zone field in *Page_title*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_title.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageTitleDocumentDataSlicesSlice>;
+}
+
+/**
+ * Page_title document from Prismic
+ *
+ * - **API ID**: `page_title`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageTitleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PageTitleDocumentData>,
+    "page_title",
+    Lang
+  >;
+
 type SengagerDocumentDataSlicesSlice = InfoColumnsSlice;
 
 /**
@@ -558,6 +626,8 @@ export type AllDocumentTypes =
   | ArticleDocument
   | GlossaireDocument
   | HomepageDocument
+  | NavigationDocument
+  | PageTitleDocument
   | SengagerDocument
   | SitetitleDocument;
 
@@ -1407,6 +1477,12 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataArticleitemItem,
       HomepageDocumentDataSlicesSlice,
+      NavigationDocument,
+      NavigationDocumentData,
+      NavigationDocumentDataSlicesSlice,
+      PageTitleDocument,
+      PageTitleDocumentData,
+      PageTitleDocumentDataSlicesSlice,
       SengagerDocument,
       SengagerDocumentData,
       SengagerDocumentDataSlicesSlice,

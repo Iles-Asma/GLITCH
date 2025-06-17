@@ -11,6 +11,8 @@ import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
+
+
 export default async function Page() {
   const client = createClient();
 

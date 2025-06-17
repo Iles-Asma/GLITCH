@@ -52,10 +52,44 @@ img{
 a {
 	color: inherit;
 	text-decoration: none;
+	font-size: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+.custom-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: white;
+	border-bottom: 1px solid #ccc;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: var(--font-geist-sans, sans-serif);
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.custom-nav-left,
+.custom-nav-right {
+	display: flex;
+	gap: 2rem;
+}
+
+.custom-nav-center {
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
 }

@@ -47,6 +47,7 @@
 }
 
 
+
 .main ol {
 	font-family: var(--font-geist-mono);
 	padding-left: 0;
@@ -231,10 +232,12 @@ a.secondary {
 }
 
 .articleCard .title {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-weight: bold;
-	padding: 1rem;
-	text-align: center;
+	padding: .5rem;
+	text-align: left;
+	background-color: black;
+	color: white;
 }
 
 @media (min-width: 768px) {
@@ -242,4 +245,6 @@ a.secondary {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+
 
