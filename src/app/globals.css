@@ -119,7 +119,7 @@ h1{
  
 
    .global-page-title p {
-   font-size: calc(100vw / 20); /* Ajuste dynamiquement */
+   font-size: calc(100vw / 23); /* Ajuste dynamiquement */
   white-space: nowrap;
   width: 100%;
   text-align: center;
