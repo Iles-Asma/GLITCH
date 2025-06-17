@@ -6,13 +6,13 @@
   "status": true,
   "json": {
     "Main": {
-      "title": {
+      "sengagerTitle": {
         "type": "StructuredText",
         "config": {
-          "label": "Title",
+          "label": "SengagerTitle",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "heading1,strong"
+          "multi": "heading1"
         }
       },
       "slices": {

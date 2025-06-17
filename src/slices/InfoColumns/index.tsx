@@ -22,14 +22,14 @@ const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			<h1>
-				<PrismicRichText field={data.title} />
-			</h1>
+			{/* <h1>
+				<PrismicRichText field={slice.primary.} />
+			</h1> */}
 
 			<div className={styles.card}>
-				{slice.primary.title && (
+				{slice.primary.cardTitle && (
 					<h2 className={styles.title}>
-						<PrismicText field={slice.primary.title} />
+						<PrismicText field={slice.primary.cardTitle} />
 					</h2>
 				)}
 

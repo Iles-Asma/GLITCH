@@ -470,15 +470,15 @@ type SengagerDocumentDataSlicesSlice = InfoColumnsSlice;
  */
 interface SengagerDocumentData {
   /**
-   * Title field in *sengager*
+   * SengagerTitle field in *sengager*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: sengager.title
+   * - **API ID Path**: sengager.sengagerTitle
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
+  sengagerTitle: prismic.RichTextField;
 
   /**
    * Slice Zone field in *sengager*
