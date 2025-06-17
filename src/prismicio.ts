@@ -23,7 +23,7 @@ const routes: Route[] = [
 	{ type: "glossaire", path: "/glossaire" },
 	{ type: "article", path: "/:uid" },
 	{ type: "sengager", path: "/sengager" },
-	{ type: "Mentionlegale", path: "/Mentionlegale" },
+	{ type: "Mentionlegale", path: "/mentionlegale" },
 ];
 
 /**
