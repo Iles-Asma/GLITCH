@@ -22,10 +22,6 @@ const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			{/* <h1>
-				<PrismicRichText field={slice.primary.} />
-			</h1> */}
-
 			<div className={styles.card}>
 				{slice.primary.cardTitle && (
 					<h2 className={styles.title}>
@@ -34,9 +30,19 @@ const InfoColumns: FC<InfoColumnsProps> = ({ slice }) => {
 				)}
 
 				<div className={styles.items}>
-					<PrismicRichText field={slice.primary.engamentsubtitle} />
+					{slice.primary.engamentsubtitle && (
+						<PrismicRichText
+							field={slice.primary.engamentsubtitle}
+						/>
+					)}
+
 					{slice.primary.engagementgroup?.map((item, index) => (
 						<div key={index} className={styles.item}>
+							{item.contentMiniTitle && (
+								<PrismicRichText
+									field={item.contentMiniTitle}
+								/>
+							)}
 							{item.engagementcontent && (
 								<PrismicRichText
 									field={item.engagementcontent}

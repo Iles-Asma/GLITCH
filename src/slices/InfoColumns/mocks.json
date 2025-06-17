@@ -33,6 +33,20 @@
 										}
 									]
 								}
+							],
+							[
+								"contentMiniTitle",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading4",
+											"content": {
+												"text": "Being"
+											}
+										}
+									]
+								}
 							]
 						]
 					}

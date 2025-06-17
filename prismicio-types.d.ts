@@ -949,6 +949,16 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface InfoColumnsSliceAudienceTiersPrimaryEngagementgroupItem {
   /**
+   * contentMinititle field in *InfoColumns → card-sengager → Primary → EngagementGroup*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_columns.audience_tiers.primary.engagementgroup[].contentMiniTitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contentMiniTitle: prismic.RichTextField;
+
+  /**
    * EngagementContent field in *InfoColumns → card-sengager → Primary → EngagementGroup*
    *
    * - **Field Type**: Rich Text

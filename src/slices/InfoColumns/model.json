@@ -35,6 +35,15 @@
             "label": "EngagementGroup",
             "repeat": true,
             "fields": {
+              "contentMiniTitle": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "contentMinititle",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading4"
+                }
+              },
               "engagementcontent": {
                 "type": "StructuredText",
                 "config": {
