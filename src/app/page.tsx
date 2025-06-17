@@ -11,8 +11,6 @@ import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-
-
 export default async function Page() {
   const client = createClient();
 
@@ -32,26 +30,34 @@ export default async function Page() {
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
 
-  // ➕ Ajout d'une slice factice pour afficher dynamiquement les articles
+  // ➕ Injecter dynamiquement la section articles
   const slicesWithArticles = page.data.slices.map((slice) => {
     if (slice.slice_type === "articles_inject") {
       return {
         ...slice,
         component: () => (
-          <section className={styles.articleList}>
-            {sortedArticles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/article/${article.uid}`}
-                className={styles.articleCard}
-              >
-                <PrismicImage field={article.data.articleimage} />
-                <div className={styles.title}>
-                  <PrismicRichText field={article.data.articletitle} />
-                </div>
-			</Link>
-            ))}
-          </section>
+          <div>            
+             <div className={styles.pageTitle}>
+             <h1 >On a (déjà) écrit ça</h1>
+             </div>
+
+            <section className={styles.articleList}>
+              {/* ✅ H1 en haut de la section */}
+
+              {sortedArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/article/${article.uid}`}
+                  className={styles.articleCard}
+                >
+                  <PrismicImage field={article.data.articleimage} />
+                  <div className={styles.title}>
+                    <PrismicRichText field={article.data.articletitle} />
+                  </div>
+                </Link>
+              ))}
+            </section>
+          </div>
         ),
       };
     }
@@ -60,8 +66,6 @@ export default async function Page() {
 
   return (
     <>
-     
-
       <SliceZone
         slices={slicesWithArticles}
         components={{
@@ -74,7 +78,7 @@ export default async function Page() {
   );
 }
 
-// SEO
+// ✅ SEO
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
   const page = await client.getSingle("homepage").catch(() => notFound());
