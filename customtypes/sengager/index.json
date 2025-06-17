@@ -12,7 +12,7 @@
           "label": "Title",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "strong,paragraph,heading1"
+          "multi": "heading1,strong"
         }
       },
       "slices": {
