@@ -463,6 +463,82 @@ export type PageTitleDocument<Lang extends string = string> =
     Lang
   >;
 
+type PolitiquedeconfidentialiteDocumentDataSlicesSlice = LegalInformationSlice;
+
+/**
+ * Content for politiqueDeConfidentialite documents
+ */
+interface PolitiquedeconfidentialiteDocumentData {
+  /**
+   * Title field in *politiqueDeConfidentialite*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: politiquedeconfidentialite.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *politiqueDeConfidentialite*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: politiquedeconfidentialite.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PolitiquedeconfidentialiteDocumentDataSlicesSlice> /**
+   * Meta Title field in *politiqueDeConfidentialite*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: politiquedeconfidentialite.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *politiqueDeConfidentialite*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: politiquedeconfidentialite.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *politiqueDeConfidentialite*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: politiquedeconfidentialite.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * politiqueDeConfidentialite document from Prismic
+ *
+ * - **API ID**: `politiquedeconfidentialite`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PolitiquedeconfidentialiteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PolitiquedeconfidentialiteDocumentData>,
+    "politiquedeconfidentialite",
+    Lang
+  >;
+
 type SengagerDocumentDataSlicesSlice = InfoColumnsSlice;
 
 /**
@@ -626,6 +702,7 @@ export type AllDocumentTypes =
   | HomepageDocument
   | NavigationDocument
   | PageTitleDocument
+  | PolitiquedeconfidentialiteDocument
   | SengagerDocument
   | SitetitleDocument;
 
@@ -1486,6 +1563,9 @@ declare module "@prismicio/client" {
       NavigationDocumentDataSlicesSlice,
       PageTitleDocument,
       PageTitleDocumentData,
+      PolitiquedeconfidentialiteDocument,
+      PolitiquedeconfidentialiteDocumentData,
+      PolitiquedeconfidentialiteDocumentDataSlicesSlice,
       SengagerDocument,
       SengagerDocumentData,
       SengagerDocumentDataSlicesSlice,
