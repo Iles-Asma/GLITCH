@@ -1136,6 +1136,16 @@ export interface IntroTextVisualsSliceDefaultPrimaryMaintextItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   rightcolumntext: prismic.RichTextField;
+
+  /**
+   * thirdBlock field in *AproposSection → Default → Primary → mainText*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.maintext[].thirdblock
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  thirdblock: prismic.RichTextField;
 }
 
 /**
