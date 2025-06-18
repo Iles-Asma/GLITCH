@@ -1114,6 +1114,31 @@ export type InfoColumnsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *AproposSection → Default → Primary → mainText*
+ */
+export interface IntroTextVisualsSliceDefaultPrimaryMaintextItem {
+  /**
+   * leftColumnText field in *AproposSection → Default → Primary → mainText*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.maintext[].leftcolumntext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  leftcolumntext: prismic.RichTextField;
+
+  /**
+   * rightColumnText field in *AproposSection → Default → Primary → mainText*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.maintext[].rightcolumntext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rightcolumntext: prismic.RichTextField;
+}
+
+/**
  * Item in *AproposSection → Default → Primary → Secondary Visual Blocks*
  */
 export interface IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem {
@@ -1161,6 +1186,18 @@ export interface IntroTextVisualsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   main_text: prismic.RichTextField;
+
+  /**
+   * mainText field in *AproposSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_text_visuals.default.primary.maintext[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  maintext: prismic.GroupField<
+    Simplify<IntroTextVisualsSliceDefaultPrimaryMaintextItem>
+  >;
 
   /**
    * Main Visual field in *AproposSection → Default → Primary*
@@ -1596,6 +1633,7 @@ declare module "@prismicio/client" {
       InfoColumnsSliceVariation,
       InfoColumnsSliceAudienceTiers,
       IntroTextVisualsSlice,
+      IntroTextVisualsSliceDefaultPrimaryMaintextItem,
       IntroTextVisualsSliceDefaultPrimarySecondaryVisualsItem,
       IntroTextVisualsSliceDefaultPrimary,
       IntroTextVisualsSliceVariation,

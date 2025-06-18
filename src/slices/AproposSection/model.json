@@ -25,6 +25,33 @@
             "label": "Main Rich Text Block"
           }
         },
+        "maintext": {
+          "type": "Group",
+          "config": {
+            "label": "mainText",
+            "repeat": true,
+            "fields": {
+              "leftcolumntext": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "leftColumnText",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              },
+              "rightcolumntext": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "rightColumnText",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              }
+            }
+          }
+        },
         "main_visual": {
           "type": "Image",
           "config": {

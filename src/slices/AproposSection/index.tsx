@@ -17,29 +17,38 @@ const IntroTextVisuals: FC<IntroTextVisualsProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			<header className={styles.header}>
-				<PrismicRichText field={slice.primary.title} />
-			</header>
-
-			<div className={styles.mainContent}>
-				<div className={styles.text}>
+			{/* premier container */}
+			<div>
+				<div>
+					<PrismicRichText field={slice.primary.title} />
 					<PrismicRichText field={slice.primary.main_text} />
 				</div>
-				<div className={styles.image}>
-					<PrismicImage field={slice.primary.main_visual} />
+
+				<div>
+					{slice.primary.maintext.map((item) => (
+						<>
+							<PrismicRichText field={item.leftcolumntext} />
+							<PrismicRichText field={item.rightcolumntext} />
+						</>
+						// Render the item
+					))}
 				</div>
 			</div>
 
-			{slice.primary.secondary_visuals?.length > 0 && (
-				<div className={styles.secondaryGrid}>
-					{slice.primary.secondary_visuals.map((item, index) => (
-						<div key={index} className={styles.secondaryItem}>
-							<PrismicImage field={item.secondary_image} />
+			{/* deuxieme contaniner */}
+			<PrismicImage field={slice.primary.main_visual} />
+
+			{/* troisieme container */}
+			<div>
+				{slice.primary.secondary_visuals.map((item) => (
+					<>
+						<PrismicImage field={item.secondary_image} />
+						<div>
 							<PrismicRichText field={item.secondary_text} />
 						</div>
-					))}
-				</div>
-			)}
+					</>
+				))}
+			</div>
 		</section>
 	);
 };
