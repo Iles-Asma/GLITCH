@@ -1,10 +1,6 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import {
-	SliceComponentProps,
-	PrismicRichText,
-	PrismicLink,
-} from "@prismicio/react";
+import { SliceComponentProps, PrismicLink } from "@prismicio/react";
 import styles from "./page.module.css";
 
 /**
@@ -32,7 +28,7 @@ const NavigationBar: FC<NavigationBarProps> = ({ slice }) => {
 				</div>
 
 				<div className={styles.center}>
-					<PrismicRichText field={slice.primary.center_title} />
+					<PrismicLink field={slice.primary.center_title} />
 				</div>
 
 				<div className={styles.right}>

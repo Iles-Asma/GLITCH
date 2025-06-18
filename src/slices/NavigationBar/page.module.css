@@ -1,9 +1,8 @@
-/* page.module.css */
 .nav {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 2rem;
+	flex-direction: column;
+	align-items: stretch;
+	padding: 0.5rem;
 	background-color: white;
 	border: 1px solid #ccc;
 	text-transform: uppercase;
@@ -14,9 +13,29 @@
 .left,
 .right {
 	display: flex;
-	gap: 2rem;
+	justify-content: center;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
 }
 
 .center {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	order: -1; /* Place the center at the top */
+}
+
+/* Optional: Adjustments for larger screens */
+@media (min-width: 768px) {
+	.nav {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 2rem;
+	}
+
+	.center {
+		order: 0; /* Reset order for larger screens */
+	}
 }
