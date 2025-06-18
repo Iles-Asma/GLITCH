@@ -1,56 +1,132 @@
+.section {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+}
+
+/* Premier container */
 .containerTextColumns {
+	margin-bottom: 3rem;
+}
+
+.titleAndMainText {
 	margin-bottom: 2rem;
 }
 
-.title {
+.titleAndMainText h2,
+.titleAndMainText h1 {
+	font-size: 2.5rem;
 	margin-bottom: 1rem;
+	line-height: 1.2;
 }
 
 .columns {
 	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
-
-.columnPair {
-	display: flex;
+	flex-wrap: wrap;
 	gap: 2rem;
 }
 
+/* Chaque paire de colonnes */
+.columnPair {
+	display: flex;
+	flex: 1 1 100%;
+	gap: 2rem;
+	margin-bottom: 1.5rem;
+	min-width: 300px; /* permet un wrap si trop petit */
+}
+
+/* Colonne gauche et droite */
 .leftColumn,
 .rightColumn {
 	flex: 1;
+}
+
+/* Texte avec un peu d'espacement */
+.leftColumn p,
+.rightColumn p {
+	margin-bottom: 1rem;
+	line-height: 1.5;
+}
+
+/* Deuxième container : image pleine largeur */
+.containerMainImage {
+	margin-bottom: 3rem;
 }
 
 .containerMainImage img {
 	width: 100%;
 	height: auto;
 	display: block;
+	border-radius: 8px;
+	object-fit: cover;
 }
 
+/* Troisième container : blocs secondaires */
 .containerSecondaryVisuals {
-	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 3rem;
 }
 
 .secondaryItem {
 	display: flex;
-	gap: 1rem;
+	gap: 2rem;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
+/* Image à gauche */
 .imageLeft {
-	flex: 1;
+	flex: 1 1 40%;
+	min-width: 250px;
 }
 
 .imageLeft img {
 	width: 100%;
 	height: auto;
-	display: block;
+	border-radius: 6px;
+	object-fit: cover;
 }
 
+/* Texte à droite */
 .textRight {
-	flex: 1;
+	flex: 1 1 55%;
+	min-width: 250px;
+}
+
+.textRight p {
+	line-height: 1.6;
+	margin-bottom: 1rem;
+}
+
+/* Responsive : sur petits écrans, on passe en colonne */
+@media (max-width: 768px) {
+	.columns,
+	.columnPair,
+	.secondaryItem {
+		flex-direction: column;
+	}
+
+	.columnPair {
+		gap: 1rem;
+	}
+
+	.imageLeft,
+	.textRight {
+		flex: 1 1 100%;
+		min-width: auto;
+	}
+
+	.containerTextColumns {
+		padding: 0 1rem;
+	}
+
+	.containerMainImage {
+		padding: 0 1rem;
+	}
+
+	.containerSecondaryVisuals {
+		padding: 0 1rem;
+	}
 }
