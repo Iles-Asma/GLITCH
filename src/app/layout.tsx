@@ -3,9 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { getNavigation } from "@/lib/getNavigation";
 import { getPageTitle } from "@/lib/getPageTitle";
 import { getFooter } from "@/lib/getFooter";
-import { PrismicLink, PrismicRichText, SliceZone } from "@prismicio/react";
-import { components } from "@/slices";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import "./globals.css";
+
+// Client wrapper to handle footer display
+import { LayoutWrapper } from "@/components/LayoutWrapper"; // 🔁 Ajouté
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -58,8 +60,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* Page content */}
           <main className="page-main">{children}</main>
 
-          {/* Footer */}
-          <SliceZone slices={footer.data.slices} components={components} />
+          {/* Footer (not shown on /article/*) */}
+          <LayoutWrapper footerSlices={footer.data.slices} />
         </div>
       </body>
     </html>
