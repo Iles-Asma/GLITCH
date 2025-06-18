@@ -31,14 +31,15 @@ export default async function RootLayout({
 	const footer = await getFooter();
 	const slice = navigation.data.slices?.[0];
 
-	return (
-		<html lang="fr">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<div className="layout-wrapper">
-					{/* Page Title */}
-					<div className="global-page-title">
-						<PrismicRichText field={pageTitle.data.title} />
-					</div>
+	
+  return (
+    <html lang="fr" data-arp="">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="layout-wrapper">
+          {/* Page Title */}
+          <div className="global-page-title">
+            <PrismicRichText field={pageTitle.data.title} />
+          </div>
 
 					{/* Navigation */}
 					<header className="custom-nav">

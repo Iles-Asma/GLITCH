@@ -3,13 +3,6 @@
 	text-align: center;
 }
 
-.card {
-	background-color: #111;
-	padding: 3rem 2rem;
-	width: 30vw;
-	text-align: left;
-}
-
 .title {
 	font-size: 1.5rem;
 	font-weight: bold;
@@ -19,19 +12,22 @@
 	text-align: center;
 }
 
-.items {
+/* Grid qui contient les cards */
+.cardGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	width: 100%;
+}
+
+/* Chaque card individuelle */
+.card {
+	background-color: #111;
+	text-align: left;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-}
-
-.item {
-	font-size: 1rem;
-	line-height: 1.6;
-}
-
-@media screen and (max-width: 750px) {
-	.card {
-		width: 100%;
-	}
+	justify-content: space-between;
+	height: 100%;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	padding: 2rem;
 }

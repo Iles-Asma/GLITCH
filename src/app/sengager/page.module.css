@@ -1,7 +1,6 @@
 .container {
 	width: 100%;
 	margin: 0 auto;
-	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -17,9 +16,9 @@
 /* Style pour aligner les "cards" en ligne */
 .cardContainer {
 	display: flex;
-	flex-wrap: wrap;
 	gap: 2rem;
 	justify-content: center;
+	padding: 2rem;
 }
 
 @media screen and (max-width: 768px) {
