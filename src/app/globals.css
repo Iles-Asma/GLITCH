@@ -129,3 +129,37 @@ h1{
 }
 
 
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-main {
+  flex: 1;
+  padding-bottom: 4rem; /* Pour éviter que le contenu touche le footer */
+}
+
+/* Ajustements responsive spécifiques au footer */
+.footer {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+}

@@ -211,6 +211,40 @@ export type ArticleDocument<Lang extends string = string> =
     Lang
   >;
 
+type FooterDocumentDataSlicesSlice = FooterSimpleGridSlice;
+
+/**
+ * Content for footer  documents
+ */
+interface FooterDocumentData {
+  /**
+   * Slice Zone field in *footer *
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+
+/**
+ * footer  document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
 type GlossaireDocumentDataSlicesSlice = SplitTitleDescriptionSlice;
 
 /**
@@ -698,6 +732,7 @@ export type SitetitleDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | MentionlegaleDocument
   | ArticleDocument
+  | FooterDocument
   | GlossaireDocument
   | HomepageDocument
   | NavigationDocument
@@ -1598,6 +1633,9 @@ declare module "@prismicio/client" {
       ArticleDocument,
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataSlicesSlice,
       GlossaireDocument,
       GlossaireDocumentData,
       GlossaireDocumentDataSlicesSlice,
