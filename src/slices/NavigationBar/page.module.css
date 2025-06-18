@@ -35,7 +35,7 @@
 		padding: 1rem 2rem;
 	}
 
-	.center {
-		order: 0; /* Reset order for larger screens */
-	}
+	/* .center {
+		order: 0; /* Reset order for larger screens 
+	} */
 }

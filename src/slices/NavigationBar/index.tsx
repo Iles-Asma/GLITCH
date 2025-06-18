@@ -27,7 +27,7 @@ const NavigationBar: FC<NavigationBarProps> = ({ slice }) => {
 					))}
 				</div>
 
-				<div className={styles.center}>
+				<div>
 					<PrismicLink field={slice.primary.center_title} />
 				</div>
 
