@@ -35,9 +35,24 @@ const IntroTextVisuals: FC<IntroTextVisualsProps> = ({ slice }) => {
 										/>
 									</div>
 									<div className={styles.rightColumn}>
-										<PrismicRichText
-											field={item.rightcolumntext}
-										/>
+										<div
+											className={
+												styles.rightColTxtCtainer
+											}
+										>
+											<PrismicRichText
+												field={item.rightcolumntext}
+											/>
+										</div>
+										<div
+											className={
+												styles.thirdColTxtCtainer
+											}
+										>
+											<PrismicRichText
+												field={item.thirdblock}
+											/>
+										</div>
 									</div>
 								</div>
 							))}
@@ -45,7 +60,7 @@ const IntroTextVisuals: FC<IntroTextVisualsProps> = ({ slice }) => {
 					)}
 			</div>
 
-			{/* Deuxième container : image principale pleine largeur */}
+			{/* Deuxième container : i1mage principale pleine largeur */}
 			{slice.primary.main_visual && (
 				<div className={styles.containerMainImage}>
 					<PrismicImage field={slice.primary.main_visual} />

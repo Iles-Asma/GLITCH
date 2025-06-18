@@ -1,12 +1,18 @@
 .section {
-	padding: 2rem;
-	max-width: 1200px;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+	grid-template-rows: auto auto auto; /* 3 lignes */
+	gap: 2rem;
+
 	margin: 0 auto;
 	font-family: Arial, sans-serif;
 }
 
 /* Premier container */
 .containerTextColumns {
+	grid-column: 2 / span 3; /* commence à la 2e colonne, prend 2 colonnes */
+	grid-row: 1;
 	margin-bottom: 3rem;
 }
 
@@ -36,21 +42,28 @@
 	min-width: 300px; /* permet un wrap si trop petit */
 }
 
-/* Colonne gauche et droite */
-.leftColumn,
-.rightColumn {
-	flex: 1;
-}
-
 /* Texte avec un peu d'espacement */
 .leftColumn p,
 .rightColumn p {
-	margin-bottom: 1rem;
 	line-height: 1.5;
+}
+
+.rightColTxtCtainer {
+	padding-bottom: 1.5rem;
+}
+
+.rightColTxtCtainer li {
+	margin-left: 2rem;
+}
+
+.thirdColTxtCtainer li {
+	margin-left: 2rem;
 }
 
 /* Deuxième container : image pleine largeur */
 .containerMainImage {
+	grid-column: 1 / -1; /* prend toutes les colonnes */
+	grid-row: 2;
 	margin-bottom: 3rem;
 }
 
@@ -58,41 +71,33 @@
 	width: 100%;
 	height: auto;
 	display: block;
-	border-radius: 8px;
 	object-fit: cover;
 }
 
 /* Troisième container : blocs secondaires */
 .containerSecondaryVisuals {
+	grid-column: 1 / -1; /* toute la largeur */
+	grid-row: 3;
 	display: flex;
-	flex-direction: column;
 	gap: 3rem;
 }
 
 .secondaryItem {
-	display: flex;
 	gap: 2rem;
-	align-items: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
+	display: flex;
 }
 
 /* Image à gauche */
-.imageLeft {
-	flex: 1 1 40%;
-	min-width: 250px;
-}
-
 .imageLeft img {
-	width: 100%;
-	height: auto;
-	border-radius: 6px;
-	object-fit: cover;
+	width: 60vw;
 }
 
 /* Texte à droite */
 .textRight {
-	flex: 1 1 55%;
-	min-width: 250px;
+	/* grid-column-start: 3; */
+	/* flex: 1 1 55%; */
+	/* min-width: 250px; */
 }
 
 .textRight p {

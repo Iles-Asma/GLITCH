@@ -37,7 +37,7 @@
                   "label": "leftColumnText",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph"
+                  "multi": "paragraph,list-item"
                 }
               },
               "rightcolumntext": {
@@ -46,7 +46,16 @@
                   "label": "rightColumnText",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph"
+                  "multi": "paragraph,list-item"
+                }
+              },
+              "thirdblock": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "thirdBlock",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "list-item"
                 }
               }
             }
