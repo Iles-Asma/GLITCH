@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import PageWrapper from "@/components/PageWrapper";
 import ClientGlobalTitle from "@/components/ClientGlobalTitle";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { getNavigation } from "@/lib/getNavigation";
@@ -39,6 +40,7 @@ export default async function RootLayout({
 	return (
 		<html lang="fr" data-arp="">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<GoogleAnalytics />
 				<div className="layout-wrapper">
 					{/* Page Title */}
 					<div className="global-page-title">
