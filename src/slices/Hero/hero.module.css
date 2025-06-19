@@ -109,4 +109,9 @@
 }
 
 
+@media (max-width: 768px) {
+	.heroSection {
+		margin-top: 5rem;
 
+	}
+}
