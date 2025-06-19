@@ -253,7 +253,7 @@ h1 {
 	}
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 	.mobile-nav {
 		display: none;
 	}
@@ -263,4 +263,7 @@ h1 {
 	.custom-nav-center {
 		display: flex;
 	}
+
+	
 }
+
