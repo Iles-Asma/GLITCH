@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
 import PageWrapper from "@/components/PageWrapper";
 import ClientGlobalTitle from "@/components/ClientGlobalTitle";
-import { RevealProvider } from "@/lib/RevealContext";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { getNavigation } from "@/lib/getNavigation";
 import { getPageTitle } from "@/lib/getPageTitle";
 import { getFooter } from "@/lib/getFooter";
 
-import { PrismicLink, PrismicRichText } from "@prismicio/react";
+import { PrismicLink } from "@prismicio/react";
 import "./globals.css";
 
 // Client wrapper to handle footer display
@@ -36,16 +36,14 @@ export default async function RootLayout({
 	const footer = await getFooter();
 	const slice = navigation.data.slices?.[0];
 
-	
-  return (
-    <html lang="fr" data-arp="">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="layout-wrapper">
-          {/* Page Title */}
-          <div className="global-page-title">
-  <ClientGlobalTitle title={pageTitle.data.title} />
-</div>
-
+	return (
+		<html lang="fr" data-arp="">
+			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<div className="layout-wrapper">
+					{/* Page Title */}
+					<div className="global-page-title">
+						<ClientGlobalTitle title={pageTitle.data.title} />
+					</div>
 
 					{/* Navigation */}
 					<header className="custom-nav">
@@ -87,11 +85,9 @@ export default async function RootLayout({
 					</header>
 
 					{/* Page content */}
-<main className="page-main">
-  <PageWrapper>
-    {children}
-  </PageWrapper>
-</main>
+					<main className="page-main">
+						<PageWrapper>{children}</PageWrapper>
+					</main>
 					{/* Footer (not shown on /article/*) */}
 					<LayoutWrapper footerSlices={footer.data.slices} />
 				</div>

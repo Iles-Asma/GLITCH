@@ -13,6 +13,7 @@ export type IntroTextVisualsProps =
 const IntroTextVisuals: FC<IntroTextVisualsProps> = ({ slice }) => {
 	return (
 		<section
+			id="a-propos"
 			className={styles.section}
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}

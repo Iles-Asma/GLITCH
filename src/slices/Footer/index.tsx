@@ -9,7 +9,7 @@ export type FooterSimpleGridProps =
 
 const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 	return (
-		<footer className={styles.footer}>
+		<footer id="#" className={styles.footer}>
 			<div className={styles.topSection}>
 				<div className={styles.leftBlock}>
 					<h4>PLAN DU SITE</h4>
@@ -21,7 +21,6 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 								</PrismicLink>
 							) : null
 						)}
-						
 					</div>
 				</div>
 				<div className={styles.centerBlock}>
