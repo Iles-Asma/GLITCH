@@ -1,9 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { asImageSrc } from "@prismicio/client";
+import { asImageSrc, asLink } from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { PrismicRichText, SliceZone, PrismicImage } from "@prismicio/react";
+import GlitchLink from "@/components/GlitchLink";
+import {
+  PrismicRichText,
+  SliceZone,
+  PrismicImage,
+} from "@prismicio/react";
 import styles from "./page.module.css";
 
 type Params = { uid: string };
@@ -11,11 +16,16 @@ type Params = { uid: string };
 export default async function Page({ params }: { params: Params }) {
   const { uid } = params;
   const client = createClient();
-  const page = await client.getByUID("article", uid).catch(() => notFound());
+
+  const page = await client
+    .getByUID("article", uid)
+    .catch(() => notFound());
+
+  const pdfUrl = asLink(page.data.pdf);
 
   return (
     <div className={styles.articleWrapper}>
-      {/* Optional: display slices */}
+      {/* Slices */}
       <SliceZone slices={page.data.slices} components={components} />
 
       {/* Image */}
@@ -23,7 +33,7 @@ export default async function Page({ params }: { params: Params }) {
         <PrismicImage field={page.data.articleimage} />
       </div>
 
-      {/* Title and description */}
+      {/* Title + Description */}
       <div className={styles.textBlock}>
         <PrismicRichText
           field={page.data.articletitle}
@@ -33,35 +43,37 @@ export default async function Page({ params }: { params: Params }) {
             ),
           }}
         />
-
         <div className={styles.description}>
           <PrismicRichText field={page.data.articledescription} />
         </div>
       </div>
 
-      {/* PDF Link (if exists) */}
-      {page.data.pdf && "url" in page.data.pdf && page.data.pdf.url && (
-        <a
-          href={page.data.pdf.url}
-          className={styles.downloadBtn}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          TÉLÉCHARGER
-        </a>
-      )}
+      {/* PDF Link */}
+      {pdfUrl && (
+  <div className={styles.glitchLinkWrapper}>
+   {pdfUrl && (
+  <div className={styles.glitchLinkFixedWrapper}> {/* Nouveau wrapper fixed */}
+    <GlitchLink href={pdfUrl} className={styles.downloadBtn}>
+      TÉLÉCHARGER
+    </GlitchLink>
+  </div>
+)}
+  </div>
+)}
     </div>
   );
 }
 
-// Metadata
+// SEO
 export async function generateMetadata({
   params,
 }: {
   params: Params;
 }): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getByUID("article", params.uid).catch(() => notFound());
+  const page = await client
+    .getByUID("article", params.uid)
+    .catch(() => notFound());
 
   return {
     title: page.data.meta_title,
@@ -76,5 +88,6 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const client = createClient();
   const pages = await client.getAllByType("article");
+
   return pages.map((page) => ({ uid: page.uid }));
 }

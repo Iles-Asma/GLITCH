@@ -1,0 +1,25 @@
+.glitchWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.glitchOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255); /* Tu peux changer la couleur */
+  z-index: 2;
+  pointer-events: none;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  will-change: transform, filter;
+}

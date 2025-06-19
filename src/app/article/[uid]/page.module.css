@@ -37,11 +37,22 @@ text-align: left;
   padding-bottom: 10px;
 }
 
-.downloadBtn {
+/* page.module.css */
+.glitchLinkFixedWrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1000; /* Assure qu'il soit au-dessus de tout */
+  /* Si tu veux que le conteneur lui-même ne soit pas visible, mais juste le lien dedans */
+  /* width: 100%; */
+}
+
+.downloadBtn {
+  /* Retire position: fixed de ici */
+  /* position: static; ou laisse-le par défaut */
+  display: block; /* Pour qu'il prenne toute la largeur du parent fixed */
+  width: 100%; /* Si tu veux qu'il prenne toute la largeur de .glitchLinkFixedWrapper */
   padding: 1rem;
   background-color: #000;
   color: #fff;
@@ -50,6 +61,7 @@ text-align: left;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
+  text-align: center; /* Centre le texte */
 }
 
 @media (min-width: 768px) {

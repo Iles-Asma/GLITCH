@@ -267,3 +267,6 @@ h1 {
 	
 }
 
+.fade-wrapper {
+  opacity: 0;
+}

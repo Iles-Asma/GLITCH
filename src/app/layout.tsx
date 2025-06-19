@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import PageWrapper from "@/components/PageWrapper";
+import ClientGlobalTitle from "@/components/ClientGlobalTitle";
+import { RevealProvider } from "@/lib/RevealContext";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { getNavigation } from "@/lib/getNavigation";
 import { getPageTitle } from "@/lib/getPageTitle";
 import { getFooter } from "@/lib/getFooter";
+
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import "./globals.css";
 
@@ -38,8 +43,9 @@ export default async function RootLayout({
         <div className="layout-wrapper">
           {/* Page Title */}
           <div className="global-page-title">
-            <PrismicRichText field={pageTitle.data.title} />
-          </div>
+  <ClientGlobalTitle title={pageTitle.data.title} />
+</div>
+
 
 					{/* Navigation */}
 					<header className="custom-nav">
@@ -81,8 +87,11 @@ export default async function RootLayout({
 					</header>
 
 					{/* Page content */}
-					<main className="page-main">{children}</main>
-
+<main className="page-main">
+  <PageWrapper>
+    {children}
+  </PageWrapper>
+</main>
 					{/* Footer (not shown on /article/*) */}
 					<LayoutWrapper footerSlices={footer.data.slices} />
 				</div>

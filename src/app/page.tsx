@@ -10,6 +10,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import GlitchText from "@/components/GlitchText"; // ✅ Import du composant glitch
 
 export default async function Page() {
   const client = createClient();
@@ -30,20 +31,18 @@ export default async function Page() {
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
 
-  // ➕ Injecter dynamiquement la section articles
+  // Injecter dynamiquement la section articles
   const slicesWithArticles = page.data.slices.map((slice) => {
     if (slice.slice_type === "articles_inject") {
       return {
         ...slice,
         component: () => (
-          <div>            
-             <div className={styles.pageTitle}>
-             <h1 >On a (déjà) écrit ça</h1>
-             </div>
+          <div>
+            <div className={styles.pageTitle}>
+              <h1>On a (déjà) écrit ça</h1>
+            </div>
 
             <section className={styles.articleList}>
-              {/* ✅ H1 en haut de la section */}
-
               {sortedArticles.map((article) => (
                 <Link
                   key={article.id}
@@ -51,9 +50,10 @@ export default async function Page() {
                   className={styles.articleCard}
                 >
                   <PrismicImage field={article.data.articleimage} />
-                  <div className={styles.title}>
+
+                  <GlitchText className={styles.title}>
                     <PrismicRichText field={article.data.articletitle} />
-                  </div>
+                  </GlitchText>
                 </Link>
               ))}
             </section>
