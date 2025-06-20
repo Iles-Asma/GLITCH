@@ -2,8 +2,8 @@ import { createClient } from '@prismicio/client'
 import fs from 'fs/promises'
 import path from 'path'
 
-// 🔧 CONFIGURATION - Modifiez ces valeurs
-const REPO_NAME = 'bugmagazine' // Ex: 'glitch-portfolio'
+
+const REPO_NAME = 'bugmagazine'
 const ACCESS_TOKEN = 'MC5hRlNUYUJBQUFCNEFwLVhR.77-9MFbvv71YCknvv73vv73vv70UPlB077-977-9BypHLe-_ve-_ve-_ve-_vQRXP--_ve-_vVFJFA' // Si repo privé, sinon laissez vide
 
 async function exportPrismic() {
