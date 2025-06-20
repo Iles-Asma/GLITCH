@@ -15,7 +15,6 @@ import "./globals.css";
 // Client wrapper to handle footer display
 import { LayoutWrapper } from "@/components/LayoutWrapper";
 import { MobileNav } from "@/components/MobileNav";
-import Head from "next/head";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -41,9 +40,9 @@ export default async function RootLayout({
 	return (
 		<html lang="fr" data-arp="">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<Head>
+				<head>
 					<GoogleAnalytics />
-				</Head>
+				</head>
 
 				<div className="layout-wrapper">
 					{/* Page Title */}
