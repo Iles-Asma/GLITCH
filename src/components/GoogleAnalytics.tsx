@@ -4,12 +4,6 @@ import Script from "next/script";
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export default function GoogleAnalytics() {
-	// Ne pas charger GA en développement (optionnel)
-	if (process.env.NODE_ENV === "development") {
-		console.log("⚠️ Google Analytics désactivé en développement");
-		return null;
-	}
-
 	if (!GA_MEASUREMENT_ID) {
 		console.warn(
 			"❌ Google Analytics: NEXT_PUBLIC_GA_MEASUREMENT_ID non défini"
