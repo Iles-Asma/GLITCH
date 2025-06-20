@@ -40,7 +40,10 @@ export default async function RootLayout({
 	return (
 		<html lang="fr" data-arp="">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<GoogleAnalytics />
+				<head>
+					<GoogleAnalytics />
+				</head>
+
 				<div className="layout-wrapper">
 					{/* Page Title */}
 					<div className="global-page-title">
