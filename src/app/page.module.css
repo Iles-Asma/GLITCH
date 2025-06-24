@@ -36,6 +36,10 @@
 	color: var(--foreground);
 }
 
+.main * {
+	color: var(--foreground);
+}
+
 /* page.module.css */
 .pageTitle {
 	display: flex;
@@ -221,6 +225,10 @@ a.secondary {
 	height: 100%;
 }
 
+.articleCard * {
+	color: var(--foreground);
+}
+
 .articleCard img,
 .articleCard picture,
 .articleCard svg {
@@ -234,8 +242,8 @@ a.secondary {
 	font-weight: bold;
 	padding: 0.5rem;
 	text-align: left;
-	background-color: black;
-	color: white;
+	background-color: var(--foreground);
+	color: var(--background);
 }
 
 @media (min-width: 768px) {
@@ -253,5 +261,25 @@ a.secondary {
 @media screen and (min-width: 768px) {
 	.pageTitle h1 {
 		font-size: 3rem;
+	}
+}
+
+/* Ajout de règles spécifiques pour forcer la couleur en mode clair */
+@media (prefers-color-scheme: light) {
+	.page,
+	.main,
+	.pageTitle,
+	.pageTitle h1,
+	.articleCard,
+	.footer,
+	.main ol,
+	.main li,
+	.main code {
+		color: var(--foreground);
+	}
+
+	.articleCard .title {
+		background-color: #000000;
+		color: #ffffff;
 	}
 }

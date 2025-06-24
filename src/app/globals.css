@@ -300,7 +300,7 @@ h1 {
 .prismic-content *,
 [data-slice-type] *,
 [data-slice-variation] * {
-	color: var(--foreground) !important;
+	color: var(--foreground);
 }
 
 /* Solution de secours pour tous les textes en mode sombre */
@@ -311,7 +311,7 @@ h1 {
 
 	/* Garder les couleurs spécifiques pour certains éléments */
 	.articleCard .title {
-		background-color: #000000 !important;
-		color: #ffffff !important;
+		background-color: #000000;
+		color: #ffffff;
 	}
 }
