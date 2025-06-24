@@ -84,6 +84,7 @@ export default async function RootLayout({
 							centerTitle={
 								slice?.primary.center_title?.text || "BUG"
 							}
+							centerTitleLink={slice?.primary.center_title}
 							leftLinks={slice?.primary.left_links || []}
 							rightLinks={slice?.primary.right_links || []}
 						/>

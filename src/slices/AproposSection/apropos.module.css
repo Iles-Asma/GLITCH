@@ -17,7 +17,7 @@
 }
 
 .titleAndMainText {
-	margin-top: 10rem;
+	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
 
@@ -134,5 +134,12 @@
 
 	.containerSecondaryVisuals {
 		padding: 0 1rem;
+	}
+
+	/* Premier container */
+	.containerTextColumns {
+		grid-column: 1 / span 4; /* commence à la 2e colonne, prend 2 colonnes */
+		grid-row: 1;
+		margin-bottom: 3rem;
 	}
 }

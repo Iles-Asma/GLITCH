@@ -5,12 +5,14 @@ import { PrismicLink } from "@prismicio/react";
 
 interface MobileNavProps {
 	centerTitle: string;
+	centerTitleLink?: any; // Ajout du lien pour le titre
 	leftLinks: any[];
 	rightLinks: any[];
 }
 
 export function MobileNav({
 	centerTitle,
+	centerTitleLink,
 	leftLinks,
 	rightLinks,
 }: MobileNavProps) {
@@ -24,7 +26,17 @@ export function MobileNav({
 		<div className="mobile-nav">
 			{/* Top section avec BUG | MENU */}
 			<div className="mobile-nav-header">
-				<div className="mobile-nav-title">{centerTitle}</div>
+				{centerTitleLink ? (
+					<PrismicLink
+						field={centerTitleLink}
+						className="mobile-nav-title"
+						onClick={() => setIsMenuOpen(false)}
+					>
+						{centerTitle}
+					</PrismicLink>
+				) : (
+					<div className="mobile-nav-title">{centerTitle}</div>
+				)}
 				<button className="mobile-nav-menu-btn" onClick={toggleMenu}>
 					MENU
 				</button>

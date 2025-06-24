@@ -25,6 +25,7 @@ const routes: Route[] = [
 	{ type: "sengager", path: "/sengager" },
 	{ type: "Mentionlegale", path: "/mentionlegale" },
 	{ type: "politiquedeconfidentialite", path: "/politiquedeconfidentialite" },
+	{ type: "surprise", path: "/surprise" },
 ];
 
 /**

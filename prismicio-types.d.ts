@@ -729,6 +729,82 @@ export type SitetitleDocument<Lang extends string = string> =
     Lang
   >;
 
+type SurpriseDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Surprise documents
+ */
+interface SurpriseDocumentData {
+  /**
+   * surpriseTitle field in *Surprise*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: surprise.surprisetitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  surprisetitle: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Surprise*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: surprise.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SurpriseDocumentDataSlicesSlice> /**
+   * Meta Title field in *Surprise*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: surprise.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Surprise*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: surprise.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Surprise*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: surprise.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Surprise document from Prismic
+ *
+ * - **API ID**: `surprise`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SurpriseDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SurpriseDocumentData>,
+    "surprise",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | MentionlegaleDocument
   | ArticleDocument
@@ -739,7 +815,8 @@ export type AllDocumentTypes =
   | PageTitleDocument
   | PolitiquedeconfidentialiteDocument
   | SengagerDocument
-  | SitetitleDocument;
+  | SitetitleDocument
+  | SurpriseDocument;
 
 /**
  * Default variation for ArticlesInject Slice
@@ -1657,6 +1734,9 @@ declare module "@prismicio/client" {
       SitetitleDocument,
       SitetitleDocumentData,
       SitetitleDocumentDataNavigationItem,
+      SurpriseDocument,
+      SurpriseDocumentData,
+      SurpriseDocumentDataSlicesSlice,
       AllDocumentTypes,
       ArticlesInjectSlice,
       ArticlesInjectSliceVariation,
