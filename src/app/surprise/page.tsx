@@ -6,7 +6,8 @@ import { PrismicRichText } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import styles from "./page.module.css"; // ou votre fichier de styles
+import styles from "./page.module.css";
+import SurpriseClient from "./SurpriseClient";
 
 export default async function Page() {
 	const client = createClient();
@@ -15,11 +16,14 @@ export default async function Page() {
 	return (
 		<main className={styles.container}>
 			{page.data.surprisetitle && (
-				<div className={styles.title}>
+				<div className={`${styles.title} main-title`} id="main-title">
 					<PrismicRichText field={page.data.surprisetitle} />
 				</div>
 			)}
 			<SliceZone slices={page.data.slices} components={components} />
+
+			{/* Composant client pour les easter eggs */}
+			<SurpriseClient />
 		</main>
 	);
 }
