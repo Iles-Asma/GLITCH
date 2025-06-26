@@ -18,9 +18,8 @@
 	padding: 2rem;
 }
 
-.split-left h1{
-		margin-right: auto;
-
+.split-left h1 {
+	margin-right: auto;
 }
 
 .split-right {
@@ -39,18 +38,16 @@
 }
 
 @media screen and (max-width: 768px) {
-.split-left, .split-right{ 
-	padding: 1rem;
-}
+	.split-left,
+	.split-right {
+		padding: 1rem;
+	}
 
-.split-left{
-	font-size: 1rem
-}
+	.split-left {
+		font-size: 1rem;
+	}
 
-.split {
-	min-height: 100px;
-	
-
-
-}
+	.split {
+		min-height: 100px;
+	}
 }

@@ -1,8 +1,7 @@
 .section {
-	color: white;
+	/* color: white; */
 	text-align: center;
 	display: flex;
-	
 }
 
 .card {
@@ -32,7 +31,7 @@
 	line-height: 1.6;
 }
 
-@media screen and (max-width: 1240px){ 
+@media screen and (max-width: 1240px) {
 	.card {
 		width: 100%;
 	}
