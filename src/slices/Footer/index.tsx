@@ -9,7 +9,7 @@ export type FooterSimpleGridProps =
 
 const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 	return (
-		<footer id="#" className={styles.footer}>
+		<footer className={styles.footer}>
 			<div className={styles.topSection}>
 				<div className={styles.leftBlock}>
 					<h4>PLAN DU SITE</h4>
@@ -23,7 +23,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 						)}
 					</div>
 				</div>
-				<div className={styles.centerBlock}>
+				<div id="contact" className={styles.centerBlock}>
 					<h4>CONTACT</h4>
 					<div className={styles.contactInfo}>
 						{slice.primary.email && (
@@ -43,7 +43,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="/instagram.svg"
+								src="/insta-icon.svg"
 								alt="Instagram"
 								width={48}
 								height={48}
@@ -55,7 +55,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="/facebook.svg"
+								src="/facebook-icon.svg"
 								width={48}
 								height={48}
 								alt="Facebook"
@@ -67,7 +67,7 @@ const FooterSimpleGrid: FC<FooterSimpleGridProps> = ({ slice }) => {
 							rel="noopener noreferrer"
 						>
 							<Image
-								src="/youtube.svg"
+								src="/youtube-icon.svg"
 								width={48}
 								height={48}
 								alt="YouTube"

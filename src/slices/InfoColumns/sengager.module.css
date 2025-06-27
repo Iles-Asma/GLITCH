@@ -9,6 +9,13 @@
 	padding: 3rem 2rem;
 	width: 30vw;
 	text-align: left;
+	color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+	.card {
+		color: inherit;
+	}
 }
 
 .title {
