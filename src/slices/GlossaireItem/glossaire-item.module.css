@@ -3,11 +3,10 @@
 	min-height: 150px;
 	/* ajuste selon le contenu */
 	font-family: monospace;
-	border-bottom: 1px solid #000;
 }
 
 .split-left {
-	background-color: #1f1f1f;
+	background: #171717;
 	color: white;
 	flex: 1;
 	display: flex;
@@ -16,6 +15,7 @@
 	font-size: 1rem;
 	font-weight: bold;
 	padding: 2rem;
+	border-bottom: var(--foreground) dashed 1px;
 }
 
 .split-left h1 {
@@ -23,14 +23,14 @@
 }
 
 .split-right {
-	background-color: white;
-	color: black;
+	/* color: black; */
 	flex: 3;
 	padding: 2rem;
 	display: flex;
 	align-items: center;
-	border-left: 1px solid #000;
+	border-left: 1px solid var(--foreground);
 	font-size: 1rem;
+	border-bottom: 1px solid var(--foreground);
 
 	flex-wrap: wrap; /* permet le retour à la ligne */
 	overflow-wrap: break-word;
