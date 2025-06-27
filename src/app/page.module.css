@@ -2,7 +2,6 @@
 	--gray-rgb: 0, 0, 0;
 	--gray-alpha-200: rgba(var(--gray-rgb), 0.08);
 	--gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
 	--button-primary-hover: #383838;
 	--button-secondary-hover: #f2f2f2;
 
@@ -22,9 +21,12 @@
 		--gray-rgb: 255, 255, 255;
 		--gray-alpha-200: rgba(var(--gray-rgb), 0.145);
 		--gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
 		--button-primary-hover: #ccc;
 		--button-secondary-hover: #1a1a1a;
+	}
+
+	.logo {
+		filter: invert();
 	}
 }
 
@@ -33,21 +35,38 @@
 	flex-direction: column;
 	gap: 32px;
 	grid-row-start: 2;
-	color: var(--foreground);
+	/* color: var(--foreground); */
 }
 
-.main * {
-	color: var(--foreground);
-}
-
-/* page.module.css */
 .pageTitle {
 	display: flex;
 	justify-content: center;
 	margin: 30px 0 20px;
 	text-transform: uppercase;
 	font-size: 2.55vw;
-	color: var(--foreground);
+	/* color: var(--foreground); */
+}
+
+.pageTitle h1 {
+	font-size: 1.813rem;
+	font-weight: bold;
+	/* color: var(--foreground); */
+}
+
+@media (min-width: 768px) {
+	.pageTitle {
+		padding-top: 0.7rem;
+	}
+
+	.pageTitle h1 {
+		font-size: 3rem;
+	}
+}
+
+@media (max-width: 855px) and (min-width: 768px) {
+	.pageTitle {
+		font-size: 2.4vw;
+	}
 }
 
 .main ol {
@@ -84,7 +103,6 @@
 	border-radius: 128px;
 	height: 48px;
 	padding: 0 20px;
-	border: none;
 	border: 1px solid transparent;
 	transition:
 		background 0.2s,
@@ -129,7 +147,48 @@ a.secondary {
 	flex-shrink: 0;
 }
 
-/* Enable hover only on non-touch devices */
+/* Article components */
+.articleList {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.articleCard {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	text-decoration: none;
+	height: 100%;
+}
+
+.articleCard img,
+.articleCard picture,
+.articleCard svg {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.articleCard .title {
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.5rem;
+	text-align: left;
+	background: var(--foreground);
+	color: var(--background);
+}
+
+@media (min-width: 768px) {
+	.articleList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Hover effects (desktop only) */
 @media (hover: hover) and (pointer: fine) {
 	a.primary:hover {
 		background: var(--button-primary-hover);
@@ -147,6 +206,7 @@ a.secondary {
 	}
 }
 
+/* Mobile responsive */
 @media (max-width: 600px) {
 	.page {
 		padding: 32px;
@@ -179,107 +239,5 @@ a.secondary {
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-	}
-}
-
-/* 👇 INSÈRE ICI */
-@media (max-width: 855px) and (min-width: 768px) {
-	.pageTitle {
-		font-size: 2.4vw;
-	}
-}
-
-@media (max-width: 768px) {
-	.global-page-title {
-		display: none;
-	}
-}
-
-@media (min-width: 768px) {
-	.pageTitle {
-		padding-top: 0.7rem;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.logo {
-		filter: invert();
-	}
-}
-
-.articleList {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 2rem;
-	width: 100%;
-	margin: 0 auto;
-	padding: 2rem 1rem;
-}
-
-.articleCard {
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	text-decoration: none;
-	color: var(--foreground);
-	height: 100%;
-}
-
-.articleCard * {
-	color: var(--foreground);
-}
-
-.articleCard img,
-.articleCard picture,
-.articleCard svg {
-	width: 100%;
-	aspect-ratio: 4 / 3;
-	object-fit: cover;
-}
-
-.articleCard .title {
-	font-size: 1rem;
-	font-weight: bold;
-	padding: 0.5rem;
-	text-align: left;
-	background-color: var(--foreground);
-	color: var(--background);
-}
-
-@media (min-width: 768px) {
-	.articleList {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-.pageTitle h1 {
-	font-size: 1.813rem;
-	font-weight: bold;
-	color: var(--foreground);
-}
-
-@media screen and (min-width: 768px) {
-	.pageTitle h1 {
-		font-size: 3rem;
-	}
-}
-
-/* Ajout de règles spécifiques pour forcer la couleur en mode clair */
-@media (prefers-color-scheme: light) {
-	.page,
-	.main,
-	.pageTitle,
-	.pageTitle h1,
-	.articleCard,
-	.footer,
-	.main ol,
-	.main li,
-	.main code {
-		color: var(--foreground);
-	}
-
-	.articleCard .title {
-		background-color: #000000;
-		color: #ffffff;
 	}
 }
