@@ -309,6 +309,7 @@ h1 {
 	flex-direction: column;
 	width: 100%;
 	position: fixed;
+	background: #000;
 }
 
 .mobile-nav-header {
@@ -408,7 +409,7 @@ h1 {
 	}
 
 	.fade-wrapper {
-		margin-top: 5rem;
+		margin-top: 6rem;
 	}
 
 	.topSection {
