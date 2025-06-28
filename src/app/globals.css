@@ -309,6 +309,7 @@ h1 {
 	flex-direction: column;
 	width: 100%;
 	position: fixed;
+	background: #000;
 }
 
 .mobile-nav-header {
@@ -342,7 +343,6 @@ h1 {
 	flex: 1;
 	padding: 1rem;
 	text-align: center;
-	background: #000;
 	border: none;
 	font-weight: bold;
 	text-transform: uppercase;
