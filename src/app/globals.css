@@ -309,7 +309,6 @@ h1 {
 	flex-direction: column;
 	width: 100%;
 	position: fixed;
-	background: #000;
 }
 
 .mobile-nav-header {
@@ -349,6 +348,7 @@ h1 {
 	font-family: var(--font-geist-sans, sans-serif);
 	cursor: pointer;
 	color: var(--foreground);
+	background: var(--background);
 }
 
 .mobile-nav-subtitle {
