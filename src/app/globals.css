@@ -1,5 +1,5 @@
 :root {
-	--background: #ededed;
+	--background: #fff;
 	--foreground: #171717;
 	--font-anonymous: "Anonymous Pro", monospace;
 	--font-dosis: "Dosis", sans-serif;
@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--foreground: #ededed;
+		--foreground: #fff;
 		--background: #171717;
 	}
 }
@@ -342,7 +342,7 @@ h1 {
 	flex: 1;
 	padding: 1rem;
 	text-align: center;
-	background: var(--background);
+	background: #000;
 	border: none;
 	font-weight: bold;
 	text-transform: uppercase;
